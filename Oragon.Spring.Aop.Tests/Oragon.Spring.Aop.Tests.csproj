@@ -8,6 +8,10 @@
         <AssemblyName>Oragon.Spring.Aop.Tests</AssemblyName>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
     <ItemGroup>
       <None Remove="Aop\Config\AopNamespaceParserTests.xml" />
       <None Remove="Aop\Framework\AutoProxy\advisorAutoProxyCreatorCircularReferencesTests.xml" />

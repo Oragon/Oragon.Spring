@@ -10,6 +10,10 @@
     <RootNamespace>Oragon.Spring</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Context\Attributes\ObjectDefinitions.xml" />
     <None Remove="Context\Attributes\ObjectDefinitionsTwo.xml" />

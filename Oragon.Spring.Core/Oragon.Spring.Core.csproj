@@ -16,6 +16,10 @@
     <Version>1.0.1</Version>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Context\Config\spring-context-1.3.xsd" />
     <None Remove="Context\Config\spring-context-2.0.xsd" />

@@ -18,6 +18,10 @@
         <Version>1.0.1</Version>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
     <ItemGroup>
         <None Remove="Aop\Config\spring-aop-1.1.xsd" />
         <None Remove="Aop\Config\spring-aop-1.1.xsx" />
