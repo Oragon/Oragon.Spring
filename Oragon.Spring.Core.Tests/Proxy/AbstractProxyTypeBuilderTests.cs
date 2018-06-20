@@ -21,7 +21,7 @@
 #region Imports
 
 using System;
-using System.Net;
+
 using System.Security.Permissions;
 using System.Reflection;
 using System.Reflection.Emit;

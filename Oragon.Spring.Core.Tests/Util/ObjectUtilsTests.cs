@@ -88,7 +88,7 @@ namespace Oragon.Spring.Util
             {
                 AppDomainSetup setup = new AppDomainSetup();
                 setup.ApplicationBase = Environment.CurrentDirectory;
-                domain = _AppDomain.CreapteDomain("Spring", new Evidence(AppDomain.CurrentDomain.Evidence()), setup);
+                domain = _AppDomain.CreapteDomain("Spring", new System.Evidence(AppDomain.CurrentDomain.Evidence()), setup);
                 object foo = domain.CreateInstanceAndUnwrap(GetType().Assembly.FullName, typeof(Foo).FullName);
                 // the instance is definitely assignable to the supplied interface type...
                 bool isAssignable = ObjectUtils.IsAssignableAndNotTransparentProxy(typeof (IFoo), foo);
