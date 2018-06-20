@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<objects xmlns="http://www.springframework.net" xmlns:aop="http://www.springframework.net/aop">
+
+    <object name="blablabla" type="Oragon.Spring.Core.ConsoleTest.Person, Oragon.Spring.Core.ConsoleTest">
+        <property name="Name" value="Luiz Carlos Faria" />
+        <property name="Birthday" value="1983-07-09T00:00:00" />
+        <property name="Country" value="Brazil" />
+        <property name="Contacts">
+            <list element-type="Oragon.Spring.Core.ConsoleTest.Contact, Oragon.Spring.Core.ConsoleTest">
+                <object type="Oragon.Spring.Core.ConsoleTest.Contact, Oragon.Spring.Core.ConsoleTest">
+                    <property name="Type" value="Site" />
+                    <property name="Adddress" value="http://luizcarlosfaria.net" />
+                </object>
+                <object type="Oragon.Spring.Core.ConsoleTest.Contact, Oragon.Spring.Core.ConsoleTest">
+                    <property name="Type" value="Email" />
+                    <property name="Adddress" value="luizcarlosfaria@gmail.com" />
+                </object>
+                <object type="Oragon.Spring.Core.ConsoleTest.Contact, Oragon.Spring.Core.ConsoleTest">
+                    <property name="Type" value="Twitter" />
+                    <property name="Adddress" value="@luizcarlosfaria" />
+                </object>
+                <object type="Oragon.Spring.Core.ConsoleTest.Contact, Oragon.Spring.Core.ConsoleTest">
+                    <property name="Type" value="GitHub" />
+                    <property name="Adddress" value="https://github.com/luizcarlosfaria" />
+                </object>
+            </list>
+        </property>
+    </object>
+
+    <object id="AllServiceOperations" type="Oragon.Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Oragon.Spring.Aop">
+        <property name="Patterns">
+            <list>
+                <value>Oragon.Spring.Core.ConsoleTest.*on</value>
+            </list>
+        </property>
+    </object>
+
+    <object id="AroundAdviceExample"
+        type="Oragon.Spring.Core.ConsoleTest.AroundAdviceExample, Oragon.Spring.Core.ConsoleTest">
+    </object>
+
+    <aop:config>
+        <aop:advisor
+                advice-ref="AroundAdviceExample"
+                                    pointcut-ref="AllServiceOperations" />
+    </aop:config>
+
+</objects>

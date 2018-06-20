@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  
+  <object type="Oragon.Spring.Objects.Factory.Attributes.AutowiredAttributeObjectPostProcessor, Oragon.Spring.Core" />
+
+  <object id="HelloFoo"
+          type="Oragon.Spring.Objects.Factory.Attributes.ByType.HelloFoo, Oragon.Spring.Core.Tests" />
+
+  <object id="CiaoFoo"
+          type="Oragon.Spring.Objects.Factory.Attributes.ByType.CiaoFoo, Oragon.Spring.Core.Tests" />
+
+  <object id="AutowireTestFieldNormal"
+          type="Oragon.Spring.Objects.Factory.Attributes.ByType.AutowireTestFieldNormal, Oragon.Spring.Core.Tests"
+          lazy-init="true" />
+
+  <object id="AutowireTestPropertyNormal"
+          type="Oragon.Spring.Objects.Factory.Attributes.ByType.AutowireTestPropertyNormal, Oragon.Spring.Core.Tests"
+          lazy-init="true" />
+
+  <object id="AutowireTestMethodNormal"
+          type="Oragon.Spring.Objects.Factory.Attributes.ByType.AutowireTestMethodNormal, Oragon.Spring.Core.Tests"
+          lazy-init="true" />
+
+  <object id="AutowireTestConstructorNormal"
+          type="Oragon.Spring.Objects.Factory.Attributes.ByType.AutowireTestConstructorNormal, Oragon.Spring.Core.Tests"
+          lazy-init="true" />
+
+</objects>

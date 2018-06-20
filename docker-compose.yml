@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  summer.core.consoletest:
+    image: oragon.spring.core.consoletest
+    build:
+      context: ./Oragon.Spring.Core.ConsoleTest
+      dockerfile: Dockerfile

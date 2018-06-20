@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:context="http://www.springframework.net/context">
+
+	<context:component-scan base-assemblies="Oragon.Spring.Core.Tests">
+		<!-- to test type load exception -->
+		<context:include-filter type="attribute" expression="Oragon.Spring.Stereotype.ServiceAttribute, notvalid"/>
+
+		<context:include-filter type="attribute" expression="XmlAssemblyTypeScanner.Test.Include2.DoIncludeAttribute, Oragon.Spring.Core.Tests"/>
+	</context:component-scan>
+  
+</objects>
+

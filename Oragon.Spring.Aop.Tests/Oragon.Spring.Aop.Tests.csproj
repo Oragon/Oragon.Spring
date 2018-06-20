@@ -1,0 +1,115 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.0</TargetFramework>
+
+        <IsPackable>false</IsPackable>
+        <RootNamespace>Oragon.Spring</RootNamespace>
+        <AssemblyName>Oragon.Spring.Aop.Tests</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Aop\Config\AopNamespaceParserTests.xml" />
+      <None Remove="Aop\Framework\AutoProxy\advisorAutoProxyCreatorCircularReferencesTests.xml" />
+      <None Remove="Aop\Framework\DynamicProxy\IsAopProxyTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\adapter\withBPPContext.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\adapter\withoutBPPContext.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\AutoProxy\advisorAutoProxyCreator.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\AutoProxy\objectNameAutoProxyCreatorTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\innerBeanTarget.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\prototypeTarget.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\prototypeTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\proxyFactoryDoubleTargetSourceTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\proxyFactoryTargetSourceTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\proxyFactoryTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\serializationTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Framework\throwsAdvice.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Support\RegularExpressionSetterTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Target\commonsPoolTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Target\hotSwapTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Target\prototypeTargetSourceTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Target\simplePoolTests.xml" />
+      <None Remove="Data\Oragon\Spring\Aop\Target\threadLocalTests.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Aop\Config\AopNamespaceParserTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Aop\Framework\AutoProxy\advisorAutoProxyCreatorCircularReferencesTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Aop\Framework\DynamicProxy\IsAopProxyTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\adapter\withBPPContext.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\adapter\withoutBPPContext.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\AutoProxy\advisorAutoProxyCreator.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\AutoProxy\objectNameAutoProxyCreatorTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\innerBeanTarget.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\prototypeTarget.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\prototypeTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\proxyFactoryDoubleTargetSourceTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\proxyFactoryTargetSourceTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\proxyFactoryTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\serializationTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Framework\throwsAdvice.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Support\RegularExpressionSetterTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Target\commonsPoolTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Target\hotSwapTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Target\prototypeTargetSourceTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Target\simplePoolTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Data\Oragon\Spring\Aop\Target\threadLocalTests.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Oragon.Spring.Aop\Oragon.Spring.Aop.csproj" />
+        <ProjectReference Include="..\Oragon.Spring.Core.Tests\Oragon.Spring.Core.Tests.csproj" />
+        <ProjectReference Include="..\Oragon.Spring.Core\Oragon.Spring.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0-preview-20171211-02" />
+        <PackageReference Include="NSubstitute" Version="3.1.0" />
+        <PackageReference Include="NUnit" Version="3.9.0" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
+        <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.3.0" />
+    </ItemGroup>
+
+</Project>

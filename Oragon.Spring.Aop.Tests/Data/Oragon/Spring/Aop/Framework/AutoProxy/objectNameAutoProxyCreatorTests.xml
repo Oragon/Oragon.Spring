@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects xmlns="http://www.springframework.net" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.net http://www.springframework.net/xsd/spring-objects.xsd">
+
+  <object id="FrozenProxyCreator" type="Oragon.Spring.Aop.Framework.AutoProxy.ObjectNameAutoProxyCreator, Oragon.Spring.Aop">
+    <property name="ObjectNames">
+      <list>
+        <value>frozen</value>
+      </list>
+    </property>
+    <property name="InterceptorNames">
+      <list>
+        <value>nopInterceptor</value>
+      </list>
+    </property>
+    <property name="IsFrozen" value="true"/>
+  </object>
+  
+  <object id="ProxyCreator" type="Oragon.Spring.Aop.Framework.AutoProxy.ObjectNameAutoProxyCreator, Oragon.Spring.Aop">
+    <property name="ObjectNames">
+      <list>
+       <value>*Wildcards*</value>
+        <value>testObject</value>
+        <value>myTestObj*</value>
+        <value>*FamilyMember</value>
+        <value>doubleProxy</value>
+      </list>
+    </property>
+    <property name="InterceptorNames">
+      <list>
+        <value>nopInterceptor</value>
+      </list>
+    </property>
+  </object>
+
+  <object id="FactoryProxyCreator" type="Oragon.Spring.Aop.Framework.AutoProxy.ObjectNameAutoProxyCreator, Oragon.Spring.Aop">
+    <property name="ObjectNames">
+      <list>
+        <value>factoryObject</value>
+      </list>
+    </property>
+    <property name="InterceptorNames">
+      <list>
+        <value>nopInterceptor</value>
+      </list>
+    </property>
+  </object>
+
+  <object id="DoubleFactoryProxyCreator" type="Oragon.Spring.Aop.Framework.AutoProxy.ObjectNameAutoProxyCreator, Oragon.Spring.Aop">
+    <property name="ObjectNames">
+      <list>
+        <value>doubleProxy</value>
+      </list>
+    </property>
+    <property name="InterceptorNames">
+      <list>
+        <value>nopInterceptor</value>
+      </list>
+    </property>
+  </object>
+
+  <object id="DecoratorFactoryProxyCreator" type="Oragon.Spring.Aop.Framework.AutoProxy.ObjectNameAutoProxyCreator, Oragon.Spring.Aop">
+    <property name="ObjectNames">
+      <list>
+        <value>decoratorProx*</value>
+      </list>
+    </property>
+    <property name="ProxyTargetType" value="true"/>
+    <property name="InterceptorNames">
+      <list>
+        <value>nopInterceptor</value>
+        <value>countingBeforeAdvice</value>
+      </list>
+    </property>
+  </object>
+
+  
+  <object id="IntroductionBeanNameProxyCreator" type="Oragon.Spring.Aop.Framework.AutoProxy.ObjectNameAutoProxyCreator, Oragon.Spring.Aop">
+    <property name="ObjectNames">
+      <list>
+        <value>*introductionUsingDecorator</value>
+      </list>
+    </property>
+    <property name="InterceptorNames">
+      <list>
+        <value>introductionNopInterceptor</value>
+        <value>isModifiedAdvisor</value>
+      </list>
+    </property>
+  </object>
+  
+
+  <object id="factoryObject" type="Oragon.Spring.Aop.Framework.AutoProxy.CreatesTestObject, Oragon.Spring.Aop.Tests">
+    
+  </object>
+
+  <object id="noproxy" type="Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="noproxy"/>
+  </object>
+
+  <object id="testObject" type="Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="SimpleTestObject"/>
+  </object>
+
+  <object id="myTestObj1Name" type="Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="SimpleTestObject1"/>
+  </object>
+
+  <object id="SmithFamilyMember" type="Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="John Smith"/>
+  </object>
+
+  <object id="twoWildcardsTestObject" type="Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="Damjan Tomic"/>
+  </object>
+  
+  <object id="doubleProxy" type="Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="doubleProxy"/>
+  </object>
+
+  <object id="decoratorProxy" type="Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="decoratorProxy"/>
+  </object>
+
+  <object id="frozen" type="Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="frozen"/>
+  </object>
+
+
+  <object id="introductionUsingDecorator" type="Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="introductionUsingDecorator"/>
+  </object>
+
+  <object id="second-introductionUsingDecorator" type="Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="second-introductionUsingDecorator"/>
+  </object>
+
+
+  <object id="nopInterceptor" type="Oragon.Spring.Aop.Interceptor.NopInterceptor, Oragon.Spring.Aop.Tests"/>
+
+  <object id="countingBeforeAdvice" type="Oragon.Spring.Aop.Framework.CountingBeforeAdvice, Oragon.Spring.Aop.Tests"/>
+
+  <!--
+  <object id="factory-introductionUsingDecorator" type="Oragon.Spring.Aop.Framework.AutoProxy.CreatesTestObject, Oragon.Spring.Aop.Tests"/>
+  -->
+  
+  <object id="isModifiedAdvisor" type="Oragon.Spring.Aop.Framework.IsModifiedAdvisor, Oragon.Spring.Aop.Tests"/>
+
+  <object id="introductionNopInterceptor" type="Oragon.Spring.Aop.Interceptor.NopInterceptor, Oragon.Spring.Aop.Tests"/>
+  
+  
+</objects>

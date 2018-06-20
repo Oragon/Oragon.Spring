@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+
+  <object id="someMessageSource" name="myMessageSource"
+          type="Oragon.Spring.Context.Support.StaticMessageSourc, Oragon.Spring.Core" lazy-init="true">
+  </object>
+
+
+</objects>

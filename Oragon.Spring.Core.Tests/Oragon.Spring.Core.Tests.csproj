@@ -1,0 +1,459 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+
+    <AssemblyName>Oragon.Spring.Core.Tests</AssemblyName>
+
+    <RootNamespace>Oragon.Spring</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Context\Attributes\ObjectDefinitions.xml" />
+    <None Remove="Context\Attributes\ObjectDefinitionsTwo.xml" />
+    <None Remove="Context\Attributes\SimpleScanTest.xml" />
+    <None Remove="Context\Config\ConfigFiles\AttributeConfigParser.xml" />
+    <None Remove="Context\Config\ConfigFiles\BaseAssemblyTestMultiple.xml" />
+    <None Remove="Context\Config\ConfigFiles\BaseAssemblyTestNegative.xml" />
+    <None Remove="Context\Config\ConfigFiles\BaseAssemblyTestSingle.xml" />
+    <None Remove="Context\Config\ConfigFiles\BaseAssemblyTestWithout.xml" />
+    <None Remove="Context\Config\ConfigFiles\ComponentScan1.xml" />
+    <None Remove="Context\Config\ConfigFiles\ComponentScan2.xml" />
+    <None Remove="Context\Config\ConfigFiles\ComponentScan3.xml" />
+    <None Remove="Context\Config\ConfigFiles\ComponentScan31.xml" />
+    <None Remove="Context\Config\ConfigFiles\ComponentScan4.xml" />
+    <None Remove="Context\Config\ConfigFiles\ComponentScan5.xml" />
+    <None Remove="Context\Config\ConfigFiles\ComponentScan6.xml" />
+    <None Remove="Context\Config\ConfigFiles\ComponentScanAttributeConfigFalse.xml" />
+    <None Remove="Context\Config\ConfigFiles\ComponentScanAttributeConfigTrue.xml" />
+    <None Remove="Context\Config\ConfigFiles\TypeScannerTestAssignableExclude.xml" />
+    <None Remove="Context\Config\ConfigFiles\TypeScannerTestAssignableInclude.xml" />
+    <None Remove="Context\Config\ConfigFiles\TypeScannerTestAttributeExclude.xml" />
+    <None Remove="Context\Config\ConfigFiles\TypeScannerTestAttributeInclude.xml" />
+    <None Remove="Context\Config\ConfigFiles\TypeScannerTestCustomExclude.xml" />
+    <None Remove="Context\Config\ConfigFiles\TypeScannerTestCustomInclude.xml" />
+    <None Remove="Context\Config\ConfigFiles\TypeScannerTestRegExExclude.xml" />
+    <None Remove="Context\Config\ConfigFiles\TypeScannerTestRegExInclude.xml" />
+    <None Remove="Context\Config\ConfigFiles\TypeScannerTestRegExInclude2.xml" />
+    <None Remove="Context\contextlifecycle.xml" />
+    <None Remove="Context\Support\contextA.xml" />
+    <None Remove="Context\Support\contextB.xml" />
+    <None Remove="Context\Support\contextC.xml" />
+    <None Remove="Context\Support\import1.xml" />
+    <None Remove="Context\Support\innerObjectsWithPostProcessor.xml" />
+    <None Remove="Context\Support\invalidType.xml" />
+    <None Remove="Context\Support\invalidValueType.xml" />
+    <None Remove="Context\Support\objects.xml" />
+    <None Remove="Context\Support\simpleContext.xml" />
+    <None Remove="Context\Support\testobject.xsd" />
+    <None Remove="Context\Support\testobject.xsx" />
+    <None Remove="Context\Support\XmlApplicationContextTests-SPRNET1231.xml" />
+    <None Remove="Core\IO\ConfigSectionResourceTests_config1.xml" />
+    <None Remove="Core\IO\TestResource.txt" />
+    <None Remove="Data\PathMatcher\EmptyPattern.test" />
+    <None Remove="Data\PathMatcher\Examples.test" />
+    <None Remove="Data\PathMatcher\InBetween.test" />
+    <None Remove="Data\PathMatcher\MatchAll.test" />
+    <None Remove="Data\PathMatcher\PatternsAreCaseSensitive.test" />
+    <None Remove="Data\PathMatcher\SingleCaracters.test" />
+    <None Remove="Data\PathMatcher\SlurpPrependedDirectories.test" />
+    <None Remove="Data\PathMatcher\SpringAssembliesPrefix.test" />
+    <None Remove="Data\PathMatcher\ThisDirectory.test" />
+    <None Remove="Data\Oragon\Spring\Context\Support\SPRNET-192.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\concurrent.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\AnotherDaoConfig.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\DaoConfig.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\DatabaseConfig.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\FirstPropertyPlaceholderConfigurer.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\one.properties" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\PPC-SPRNET-55.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\PPCTwoLocationsOneSectionTests.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\PPCTwoLocationsTwoSectionsTests.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\PPCWithTypesTests.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\PropertyPlaceholderConfigurerTests.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\PropertyResourceConfigurerTests.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\SecondPropertyPlaceholderConfigurer.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\two.properties" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Config\TypeAliases.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\leaf.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\middle.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\root.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\abstract.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\array-autowire.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\autowire.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\bad-external-resources.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\bad-named-constructor-arg.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\child.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\classnotfound.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\collectionConversionGeneric.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\collectionMerging.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\collectionMergingGeneric.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\collections.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\constructor-arg.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\ctor-args.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\default-autowire.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\default-destroy-methods.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\default-initializers.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\default-lazy-init.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\dependenciesmaterializethis.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\enums.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\event-wiring-prototypes.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\event-wiring.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\expressions.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\external-resources.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\factory-methods.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\factorycircle.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\field-props-factory.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\initializers.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\invalid-factory.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\invalid.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\invoke-factory.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\lazy-init-multithreaded.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\locale.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\no-objects.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\notfullyspecified.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\objectNameGeneration.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\parent.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\reftypes.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\resource.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\Resources\resource-imports.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\satisfiedalldependencycheck.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\satisfiedobjectdependencycheck.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\satisfiedsimpledependencycheck.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\schema-validation.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\simple-constructor-arg.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\test.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\unsatisfiedalldependencycheckmissingobjects.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\unsatisfiedAllDependencyCheckMissingSimple.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\unsatisfiedobjectdependencycheck.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\unsatisfiedsimpledependencycheck.xml" />
+    <None Remove="Data\Oragon\Spring\Objects\Factory\Xml\wellformed-but-bad.xml" />
+    <None Remove="Objects\Factory\Attributes\ByQualifierAttributeObjects.xml" />
+    <None Remove="Objects\Factory\Attributes\ByQualifierObjects.xml" />
+    <None Remove="Objects\Factory\Attributes\ByTypeFailObjects.xml" />
+    <None Remove="Objects\Factory\Attributes\ByTypeNormalObjects.xml" />
+    <None Remove="Objects\Factory\Attributes\ByTypeNotRequiredObjects.xml" />
+    <None Remove="Objects\Factory\Attributes\ByTypePrimaryObjects.xml" />
+    <None Remove="Objects\Factory\Attributes\ByValueObjects.config" />
+    <None Remove="Objects\Factory\Attributes\ByValueObjects.xml" />
+    <None Remove="Objects\Factory\Attributes\CollectionObjects.xml" />
+    <None Remove="Objects\Factory\Attributes\RequiredWithAllRequiredPropertiesProvided.xml" />
+    <None Remove="Objects\Factory\Attributes\RequiredWithCustomAttribute.xml" />
+    <None Remove="Objects\Factory\Attributes\RequiredWithOneRequiredPropertyOmitted.xml" />
+    <None Remove="Objects\Factory\Attributes\RequiredWithThreeRequiredPropertiesOmitted.xml" />
+    <None Remove="Objects\Factory\TestResource.txt" />
+    <None Remove="Objects\Factory\Xml\NamespaceParserRegistryTests_TestSchema.xsd" />
+    <None Remove="Objects\Factory\Xml\NamespaceParserRegistryTests_TestSchema_2.xsd" />
+    <None Remove="Objects\Factory\Xml\XmlObjectDefinitionReaderTests_CustomSchema.xsd" />
+    <None Remove="Reflection\Dynamic\SafePropertyTests_TestObject.vb" />
+    <None Remove="Resources\SimpleAppContext.xml" />
+    <None Remove="Util\ConfigXmlDocumentTests_SampleConfig.xml" />
+    <None Remove="Validation\ValidationNamespaceParserTests_WhenConfigFileIsNotValid.xml" />
+    <None Remove="Validation\ValidationNamespaceParserTests_WhenConfigFileIsValid.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Objects\Factory\TestResource.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Context\Attributes\ObjectDefinitions.xml" />
+    <EmbeddedResource Include="Context\Attributes\ObjectDefinitionsTwo.xml" />
+    <EmbeddedResource Include="Context\Attributes\SimpleScanTest.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\AttributeConfigParser.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\BaseAssemblyTestMultiple.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\BaseAssemblyTestNegative.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\BaseAssemblyTestSingle.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\BaseAssemblyTestWithout.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\ComponentScan1.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\ComponentScan2.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\ComponentScan3.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\ComponentScan31.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\ComponentScan4.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\ComponentScan5.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\ComponentScan6.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\ComponentScanAttributeConfigFalse.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\ComponentScanAttributeConfigTrue.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\TypeScannerTestAssignableExclude.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\TypeScannerTestAssignableInclude.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\TypeScannerTestAttributeExclude.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\TypeScannerTestAttributeInclude.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\TypeScannerTestCustomExclude.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\TypeScannerTestCustomInclude.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\TypeScannerTestRegExExclude.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\TypeScannerTestRegExInclude.xml" />
+    <EmbeddedResource Include="Context\Config\ConfigFiles\TypeScannerTestRegExInclude2.xml" />
+    <EmbeddedResource Include="Context\contextlifecycle.xml" />
+    <EmbeddedResource Include="Context\Support\contextA.xml" />
+    <EmbeddedResource Include="Context\Support\contextB.xml" />
+    <EmbeddedResource Include="Context\Support\contextC.xml" />
+    <EmbeddedResource Include="Context\Support\import1.xml" />
+    <EmbeddedResource Include="Context\Support\innerObjectsWithPostProcessor.xml" />
+    <EmbeddedResource Include="Context\Support\invalidType.xml" />
+    <EmbeddedResource Include="Context\Support\invalidValueType.xml" />
+    <EmbeddedResource Include="Context\Support\objects.xml" />
+    <EmbeddedResource Include="Context\Support\simpleContext.xml" />
+    <EmbeddedResource Include="Context\Support\testobject.xsd" />
+    <EmbeddedResource Include="Context\Support\testobject.xsx" />
+    <EmbeddedResource Include="Context\Support\XmlApplicationContextTests-SPRNET1231.xml" />
+    <EmbeddedResource Include="Core\IO\ConfigSectionResourceTests_config1.xml" />
+    <EmbeddedResource Include="Core\IO\TestResource.txt" />
+    <EmbeddedResource Include="Data\PathMatcher\EmptyPattern.test" />
+    <EmbeddedResource Include="Data\PathMatcher\Examples.test" />
+    <EmbeddedResource Include="Data\PathMatcher\InBetween.test" />
+    <EmbeddedResource Include="Data\PathMatcher\MatchAll.test" />
+    <EmbeddedResource Include="Data\PathMatcher\PatternsAreCaseSensitive.test" />
+    <EmbeddedResource Include="Data\PathMatcher\SingleCaracters.test" />
+    <EmbeddedResource Include="Data\PathMatcher\SlurpPrependedDirectories.test" />
+    <EmbeddedResource Include="Data\PathMatcher\SpringAssembliesPrefix.test" />
+    <EmbeddedResource Include="Data\PathMatcher\ThisDirectory.test" />
+    <EmbeddedResource Include="Data\Oragon\Spring\Context\Support\SPRNET-192.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\concurrent.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\AnotherDaoConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\DaoConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\DatabaseConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\FirstPropertyPlaceholderConfigurer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\one.properties">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\PPC-SPRNET-55.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\PPCTwoLocationsOneSectionTests.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\PPCTwoLocationsTwoSectionsTests.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\PPCWithTypesTests.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\PropertyPlaceholderConfigurerTests.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\PropertyResourceConfigurerTests.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\SecondPropertyPlaceholderConfigurer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\two.properties">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Config\TypeAliases.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\leaf.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\middle.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\root.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\abstract.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\array-autowire.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\autowire.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\bad-external-resources.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\bad-named-constructor-arg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\child.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\classnotfound.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\collectionConversionGeneric.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\collectionMerging.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\collectionMergingGeneric.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\collections.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\constructor-arg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\ctor-args.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\default-autowire.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\default-destroy-methods.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\default-initializers.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\default-lazy-init.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\dependenciesmaterializethis.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\enums.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\event-wiring-prototypes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\event-wiring.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\expressions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\external-resources.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\factory-methods.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\factorycircle.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\field-props-factory.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\initializers.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\invalid-factory.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\invalid.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\invoke-factory.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\lazy-init-multithreaded.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\locale.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\no-objects.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\notfullyspecified.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\objectNameGeneration.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\parent.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\reftypes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\resource.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\Resources\resource-imports.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\satisfiedalldependencycheck.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\satisfiedobjectdependencycheck.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\satisfiedsimpledependencycheck.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\schema-validation.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\simple-constructor-arg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\test.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\unsatisfiedalldependencycheckmissingobjects.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\unsatisfiedAllDependencyCheckMissingSimple.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\unsatisfiedobjectdependencycheck.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\unsatisfiedsimpledependencycheck.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Oragon\Spring\Objects\Factory\Xml\wellformed-but-bad.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objects\Factory\Attributes\ByQualifierAttributeObjects.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\ByQualifierObjects.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\ByTypeFailObjects.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\ByTypeNormalObjects.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\ByTypeNotRequiredObjects.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\ByTypePrimaryObjects.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\ByValueObjects.config" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\ByValueObjects.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\CollectionObjects.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\RequiredWithAllRequiredPropertiesProvided.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\RequiredWithCustomAttribute.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\RequiredWithOneRequiredPropertyOmitted.xml" />
+    <EmbeddedResource Include="Objects\Factory\Attributes\RequiredWithThreeRequiredPropertiesOmitted.xml" />
+    <EmbeddedResource Include="Objects\Factory\Xml\NamespaceParserRegistryTests_TestSchema.xsd" />
+    <EmbeddedResource Include="Objects\Factory\Xml\NamespaceParserRegistryTests_TestSchema_2.xsd" />
+    <EmbeddedResource Include="Objects\Factory\Xml\XmlObjectDefinitionReaderTests_CustomSchema.xsd" />
+    <EmbeddedResource Include="Reflection\Dynamic\SafePropertyTests_TestObject.vb" />
+    <EmbeddedResource Include="Resources\SimpleAppContext.xml" />
+    <EmbeddedResource Include="Util\ConfigXmlDocumentTests_SampleConfig.xml" />
+    <EmbeddedResource Include="Validation\ValidationNamespaceParserTests_WhenConfigFileIsNotValid.xml" />
+    <EmbeddedResource Include="Validation\ValidationNamespaceParserTests_WhenConfigFileIsValid.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0-preview-20171211-02" />
+    <PackageReference Include="NSubstitute" Version="3.1.0" />
+    <PackageReference Include="NUnit" Version="3.9.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
+    <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Oragon.Spring.Aop\Oragon.Spring.Aop.csproj" />
+    <ProjectReference Include="..\Oragon.Spring.Core\Oragon.Spring.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pool\Support\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects  xmlns="http://www.springframework.net">
+
+  <object type="Oragon.Spring.Objects.Factory.Attributes.RequiredAttributeObjectPostProcessor, Oragon.Spring.Core"/>
+
+  <object id="testObject" type="Oragon.Spring.Objects.Factory.Attributes.RequiredTestObject, Oragon.Spring.Core.Tests">
+    <property name="Name" value="Rob Harrop"/>
+    <property name="FavoriteColor" value="Blue"/>
+    <property name="JobTitle" value="Grand Poobah"/>
+  </object> 
+
+</objects>

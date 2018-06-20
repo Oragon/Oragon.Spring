@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<objects xmlns="http://www.springframework.net">
+  <object id="abstractObjectProcessorPrototype"
+          type="Oragon.Spring.Context.Support.XmlApplicationContextTests+CountingObjectPostProcessor, Oragon.Spring.Core.Tests"
+          abstract="true">
+  </object>
+
+  <object id="abstractFactoryProcessorPrototype"
+          type="Oragon.Spring.Context.Support.XmlApplicationContextTests+CoutingObjectFactoryPostProcessor, Oragon.Spring.Core.Tests"
+          abstract="true">
+  </object>
+
+  <object id='goran' type='Oragon.Spring.Objects.TestObject, Oragon.Spring.Core.Tests'>
+    <property name='Name' value='Goran'/>
+  </object>
+
+  <object id="testObjectContainer_lazy" 
+          type="Oragon.Spring.Expressions.TestObjectContainer, Oragon.Spring.Core.Tests"
+          lazy-init="true">
+    <property name="TestObject" expression="@(goran)" />
+  </object>
+
+  <object id='disposeTester' type='Oragon.Spring.Context.Support.XmlApplicationContextTests+DisposeTester, Oragon.Spring.Core.Tests' />
+  <object id='destroyTester' type='Oragon.Spring.Context.Support.XmlApplicationContextTests+DestroyTester, Oragon.Spring.Core.Tests' destroy-method='DestroyMe'/>
+
+</objects>

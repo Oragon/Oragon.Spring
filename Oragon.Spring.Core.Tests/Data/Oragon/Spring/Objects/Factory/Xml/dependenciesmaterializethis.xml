@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Replicates a failure because of the dependence of prototype and singleton on
+  the dao. Involves factory objects.
+  -->
+
+<objects xmlns="http://www.springframework.net" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.net http://www.springframework.net/xsd/spring-objects.xsd">
+
+  <!-- Not available in .NET, so I commented it out (I'll add something else later) Rick, 9th July 2004 -->
+  <!--
+  <object id="dataSource" type="org.apache.commons.dbcp.BasicDataSource, Oragon.Spring.Core.Tests"/>
+  -->
+
+  <!-- Transaction manager that delegates to JTA (for a transactional JNDI DataSource) -->
+  <!-- Not in .NET it don't, so I commented it out (I'll add something else later) Rick, 9th July 2004 -->
+  <!--
+  <object id="transactionManager" type="org.springframework.jdbc.datasource.DataSourceTransactionManager, Oragon.Spring.Core.Tests">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+  </object>
+  -->
+
+  <object id="dao" type="Oragon.Spring.Objects.Factory.Xml.DummyDao, Oragon.Spring.Core.Tests"
+      autowire="constructor">
+  </object>
+	
+  <object id="boPrototype"
+      autowire="constructor" type="Oragon.Spring.Objects.Factory.Xml.DummyBo, Oragon.Spring.Core.Tests"
+      singleton="false"/>
+	
+  <!-- Class ain't implemented yet Rick, 9th July 2004 -->
+  <!--
+  <object id="prototypeTargetSource"
+      type="Oragon.Spring.Aop.Target.PrototypeTargetSource, Oragon.Spring.Core.Tests">
+    <property name="targetObjectName">
+      <value>boPrototype</value>
+    </property>
+  </object>
+  -->
+	
+  <!-- Refers to commented out 'transactionManager' object (see above) Rick, 9th July 2004 -->
+  <!--
+  <object id="prototypeBenchmark" type="org.springframework.transaction.interceptor.TransactionProxyFactoryObject, Oragon.Spring.Core.Tests">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="prototypeTargetSource"/>
+    </property>
+    <property name="proxyInterfaces">
+      <value>Oragon.Spring.Objects.Factory.XmlDummyBo</value>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="placeOrder">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </object>
+  -->
+	
+  <object id="boSingleton" autowire="constructor" type="Oragon.Spring.Objects.Factory.Xml.DummyBo, Oragon.Spring.Core.Tests"/>
+
+</objects>

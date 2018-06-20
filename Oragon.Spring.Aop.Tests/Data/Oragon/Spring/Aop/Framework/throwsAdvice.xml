@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	Tests for throws advice.
+-->
+<objects xmlns="http://www.springframework.net">
+    <!-- Simple target -->
+    <object id="target" type="Oragon.Spring.Aop.Framework.Adapter.ThrowsAdviceInterceptorTests+Echo"/>
+    <object id="nopInterceptor" type="Oragon.Spring.Aop.Interceptor.NopInterceptor"/>
+    <object id="countingBeforeAdvice" type="Oragon.Spring.Aop.Framework.CountingBeforeAdvice"/>
+    <object id="throwsAdvice"
+            type="Oragon.Spring.Aop.Framework.Adapter.ThrowsAdviceInterceptorTests+MyThrowsHandler"/>
+    <object id="throwsAdvised" type="Oragon.Spring.Aop.Framework.ProxyFactoryObject">
+        <property name="target" ref="target"/>
+        <property name="interceptorNames"
+                  value="countingBeforeAdvice,nopInterceptor,throwsAdvice"/>
+    </object>
+</objects>

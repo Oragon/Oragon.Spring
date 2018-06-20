@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Tests for independent prototype behaviour.
+-->
+
+<objects xmlns="http://www.springframework.net" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.net http://www.springframework.net/xsd/spring-objects.xsd">
+
+
+	
+	<object id="test" type="Oragon.Spring.Objects.Factory.SideEffectObject">	
+		<property name="count"><value>10</value></property>
+	</object>	
+	
+	<object id="prototypeTarget" type="Oragon.Spring.Objects.Factory.SideEffectObject" singleton="false">	
+		<property name="count"><value>10</value></property>
+	</object>
+
+	<object id="debugInterceptor" type="Oragon.Spring.Aop.Interceptor.NopInterceptor"/>
+	
+		
+	<object id="singleton" type="Oragon.Spring.Aop.Framework.ProxyFactoryObject">
+	    <property name="TargetName"><value>test</value></property>
+	    <property name="InterceptorNames"><value>debugInterceptor</value></property>
+	</object>
+	
+    <object id="prototype" type="Oragon.Spring.Aop.Framework.ProxyFactoryObject">
+	    <property name="TargetName"><value>prototypeTarget</value></property>
+	    <property name="InterceptorNames"><value>debugInterceptor</value></property>
+	    <property name="IsSingleton"><value>false</value></property>
+	</object>
+		
+	
+	<!--  OLD XML
+
+	<object id="target" type="Oragon.Spring.Objects.TestObject">	
+		<property name="name"><value>Adam</value></property>
+	</object>
+	
+	-->
+	
+</objects>		
+	
+	

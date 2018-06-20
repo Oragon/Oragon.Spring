@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>Oragon.Spring</RootNamespace>
+        <AssemblyName>Oragon.Spring.Aop</AssemblyName>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Oragon.Spring.Aop</PackageId>
+        <Authors>LuizCarlosFaria</Authors>
+        <Company>oragon.io</Company>
+        <Product>Oragon</Product>
+        <PackageTags>Oragon, Architecture, luiz, carlos, faria, luizcarlosfaria, oragonarchitect</PackageTags>
+        <PackageIconUrl>http://luizcarlosfaria.net/wp-content/uploads/2014/03/Oragon-Architecture-Penknife.export.png</PackageIconUrl>
+        <PackageProjectUrl>https://github.com/luizcarlosfaria/Oragon.Architecture</PackageProjectUrl>
+        <Copyright>Copyright 2017</Copyright>
+        <Description>Oragon.Spring.Aop port to .NET Standard 2.0</Description>
+        <RepositoryUrl>https://github.com/luizcarlosfaria/Oragon.Architecture</RepositoryUrl>
+        <Version>1.0.1</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="Aop\Config\spring-aop-1.1.xsd" />
+        <None Remove="Aop\Config\spring-aop-1.1.xsx" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Aop\Config\spring-aop-1.1.xsd" />
+        <EmbeddedResource Include="Aop\Config\spring-aop-1.1.xsx" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Common.Logging" Version="3.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Oragon.Spring.Core\Oragon.Spring.Core.csproj" />
+    </ItemGroup>
+
+</Project>
