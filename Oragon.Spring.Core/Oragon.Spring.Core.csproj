@@ -9,11 +9,13 @@
     <Product>Oragon</Product>
     <Description>Oragon.Spring.Core port to .NET Standard 2.0</Description>
     <PackageId>Oragon.Spring.Core</PackageId>
-    <PackageProjectUrl>https://github.com/luizcarlosfaria/Oragon.Architecture</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Oragon/Oragon.Spring</PackageProjectUrl>
     <PackageIconUrl>http://luizcarlosfaria.net/wp-content/uploads/2014/03/Oragon-Architecture-Penknife.export.png</PackageIconUrl>
-    <RepositoryUrl>https://github.com/luizcarlosfaria/Oragon.Architecture</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Oragon/Oragon.Spring</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
+    <Version>1.0.0-alpha</Version>
+    <Copyright>Copyright 2018</Copyright>
+    <PackageTags>Oragon, Architecture, luiz, carlos, faria, luizcarlosfaria, oragonarchitect</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
