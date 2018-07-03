@@ -1,0 +1,52 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oragon.Spring.Core", "Oragon.Spring.Core\Oragon.Spring.Core.csproj", "{3E93A057-9E43-41A6-87CA-7B0FE54FF02B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oragon.Spring.Aop", "Oragon.Spring.Aop\Oragon.Spring.Aop.csproj", "{29416E44-8B2C-4D86-8531-D89941EAB2C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{95BD85CA-B3E5-4A72-B4AC-178BAC7B0FDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oragon.Spring.Core.Tests", "Oragon.Spring.Core.Tests\Oragon.Spring.Core.Tests.csproj", "{4AEAC1D6-2249-4727-8C8E-17DF6424685A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oragon.Spring", "Oragon.Spring", "{C441446A-A324-4C26-A350-21F3F1541F36}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oragon.Spring.Aop.Tests", "Oragon.Spring.Aop.Tests\Oragon.Spring.Aop.Tests.csproj", "{6D417358-A415-42CF-A9B5-9964B50D4589}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E93A057-9E43-41A6-87CA-7B0FE54FF02B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E93A057-9E43-41A6-87CA-7B0FE54FF02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E93A057-9E43-41A6-87CA-7B0FE54FF02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E93A057-9E43-41A6-87CA-7B0FE54FF02B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29416E44-8B2C-4D86-8531-D89941EAB2C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29416E44-8B2C-4D86-8531-D89941EAB2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29416E44-8B2C-4D86-8531-D89941EAB2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29416E44-8B2C-4D86-8531-D89941EAB2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AEAC1D6-2249-4727-8C8E-17DF6424685A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AEAC1D6-2249-4727-8C8E-17DF6424685A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AEAC1D6-2249-4727-8C8E-17DF6424685A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AEAC1D6-2249-4727-8C8E-17DF6424685A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D417358-A415-42CF-A9B5-9964B50D4589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D417358-A415-42CF-A9B5-9964B50D4589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D417358-A415-42CF-A9B5-9964B50D4589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D417358-A415-42CF-A9B5-9964B50D4589}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3E93A057-9E43-41A6-87CA-7B0FE54FF02B} = {C441446A-A324-4C26-A350-21F3F1541F36}
+		{29416E44-8B2C-4D86-8531-D89941EAB2C7} = {C441446A-A324-4C26-A350-21F3F1541F36}
+		{4AEAC1D6-2249-4727-8C8E-17DF6424685A} = {95BD85CA-B3E5-4A72-B4AC-178BAC7B0FDE}
+		{6D417358-A415-42CF-A9B5-9964B50D4589} = {95BD85CA-B3E5-4A72-B4AC-178BAC7B0FDE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEF2D9F0-F6BC-4C5E-9EC7-01845D607FB7}
+	EndGlobalSection
+EndGlobal
