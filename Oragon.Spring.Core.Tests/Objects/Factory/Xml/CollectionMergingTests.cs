@@ -50,7 +50,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeList()
         {
             TestObject to = (TestObject) this.objectFactory.GetObject("childWithList");
@@ -62,7 +61,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergListWithInnerObjectAsListElement()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithListOfRefs");
@@ -74,7 +72,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeSet()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithSet");
@@ -85,7 +82,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeSetWithInnerObjectAsSetElement()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithSetOfRefs");
@@ -102,7 +98,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeDictionary()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithMap");
@@ -114,7 +109,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeMapWithInnerObjectAsMapEntryValue()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithMapOfRefs");
@@ -127,7 +121,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeNameValueCollection()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithNameValues");
@@ -139,7 +132,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeListInConstructor()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithListInConstructor");
@@ -151,7 +143,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeListWithInnerObjectAsListElementInConstructor()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithListOfRefsInConstructor");
@@ -163,7 +154,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeSetInConstructor()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithSetInConstructor");
@@ -174,7 +164,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeSetWithInnerObjectAsSetElementInConstructor()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithSetOfRefsInConstructor");
@@ -191,7 +180,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeMapInConstructor()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithMapInConstructor");
@@ -203,7 +191,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeMapWithInnerObjectgAsMapEntryValueInConstructor()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithMapOfRefsInConstructor");
@@ -217,7 +204,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MergeNameValueCollectionInConstructor()
         {
             TestObject to = (TestObject)this.objectFactory.GetObject("childWithPropsInConstructor");

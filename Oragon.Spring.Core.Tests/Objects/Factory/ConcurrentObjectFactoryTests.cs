@@ -43,7 +43,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void SingleThread()
         {
             for (int i = 0; i < 100; i++)
@@ -53,7 +52,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void Concurrent()
         {
             AsyncTestTask t1 = new ObjectFactoryTask(500, this).Start();

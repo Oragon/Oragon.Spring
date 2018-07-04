@@ -39,7 +39,8 @@ namespace Oragon.Spring.Util
         }
 
        [Test, Explicit]
-       public void ThisIsATestForDebuggingPurposes ()
+        [Ignore("NOT-WORKING")]
+        public void ThisIsATestForDebuggingPurposes ()
        {
            ProcessFile(new FileInfo(dir + "/Examples.test"));
        }

@@ -56,7 +56,6 @@ namespace Oragon.Spring.Objects.Factory
         /// Check that override doesn't count as two separate objects.
         /// </summary>
         [Test]
-        [Ignore("NOT-WORKING")]
         public void CountObjectsIncludingAncestors()
         {
             // leaf count...
@@ -67,7 +66,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void ObjectNamesIncludingAncestors()
         {
             IList<string> names = ObjectFactoryUtils.ObjectNamesIncludingAncestors(_factory);
@@ -75,7 +73,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void ObjectNamesForTypeIncludingAncestors()
         {
             IList<string> names = ObjectFactoryUtils.ObjectNamesForTypeIncludingAncestors(_factory, typeof(ITestObject));
@@ -88,7 +85,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void ObjectNamesForTypeIncludingAncestorsExcludesObjectsFromParentWhenLocalObjectDefined()
         {
             DefaultListableObjectFactory root = new DefaultListableObjectFactory();
@@ -106,7 +102,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void CountObjectsIncludingAncestorsWithNonHierarchicalFactory()
         {
             StaticListableObjectFactory lof = new StaticListableObjectFactory();
@@ -116,7 +111,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void HierarchicalResolutionWithOverride()
         {
             object test3 = _factory.GetObject("test3");
@@ -153,7 +147,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void ObjectOfTypeIncludingAncestorsWithMoreThanOneObjectOfType()
         {
             Assert.Throws<NoSuchObjectDefinitionException>(
@@ -162,7 +155,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void ObjectOfTypeIncludingAncestorsExcludesObjectsFromParentWhenLocalObjectDefined()
         {
             DefaultListableObjectFactory root = new DefaultListableObjectFactory();
@@ -176,7 +168,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void NoObjectsOfTypeIncludingAncestors()
         {
             StaticListableObjectFactory lof = new StaticListableObjectFactory();
@@ -186,7 +177,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void ObjectsOfTypeIncludingAncestorsWithStaticFactory()
         {
             StaticListableObjectFactory lof = new StaticListableObjectFactory();
@@ -219,7 +209,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void IsFactoryDereferenceWithNonFactoryObjectName()
         {
             Assert.IsFalse(ObjectFactoryUtils.IsFactoryDereference("roob"),
@@ -228,7 +217,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void IsFactoryDereferenceWithNullName()
         {
             Assert.IsFalse(ObjectFactoryUtils.IsFactoryDereference(null),
@@ -237,7 +225,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void IsFactoryDereferenceWithEmptyName()
         {
             Assert.IsFalse(ObjectFactoryUtils.IsFactoryDereference(string.Empty),
@@ -246,7 +233,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void IsFactoryDereferenceWithJustTheFactoryObjectPrefixCharacter()
         {
             Assert.IsFalse(ObjectFactoryUtils.IsFactoryDereference(
@@ -256,7 +242,6 @@ namespace Oragon.Spring.Objects.Factory
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void IsFactoryDereferenceSunnyDay()
         {
             Assert.IsTrue(ObjectFactoryUtils.IsFactoryDereference(

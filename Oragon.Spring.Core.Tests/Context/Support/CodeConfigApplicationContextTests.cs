@@ -49,7 +49,6 @@ namespace Oragon.Spring.Context.Support
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void Can_Filter_For_Assembly_Containing_Specific_Type_But_Having_NO_Definitions()
         {
             //specifically filter assemblies for one that we *know* will result in NO [Configuration] types in it
@@ -60,7 +59,6 @@ namespace Oragon.Spring.Context.Support
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void Can_Filter_For_Assembly_Containing_Specific_Type()
         {
             context.ScanWithAssemblyFilter(assy => assy.GetTypes().Any(type => type.FullName.Contains(typeof(MarkerTypeForScannerToFind).Name)));

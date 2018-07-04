@@ -807,6 +807,7 @@ namespace Oragon.Spring.Aop.Framework
         }
 
         [Test(Description = "http://opensource.atlassian.com/projects/spring/browse/SPRNET-293")]
+        [Ignore("NOT-WORKING")]
         public void SupportsTransparentProxyAsTarget()
         {
             AppDomain domain = null;

@@ -166,15 +166,6 @@ namespace Oragon.Spring.Caching
             mocks.VerifyAll();
         }
 
-        [Test]
-        public void CountUsingKeys()
-        {
-            // set expectations
-            Expect.Call(cache.Keys).Return(this.KEYS);
-            mocks.ReplayAll();
-            // verify
-            Assert.AreEqual( this.KEYS.Length, cache.Count );
-            mocks.VerifyAll();
-        }
+        
     }
 }

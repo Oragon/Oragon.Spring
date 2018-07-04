@@ -53,7 +53,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public virtual void SingletonSourcePrototypeSink()
         {
             DefaultListableObjectFactory factory = new DefaultListableObjectFactory();
@@ -68,7 +67,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public virtual void InstanceEventWiring()
         {
             DefaultListableObjectFactory factory = new DefaultListableObjectFactory();
@@ -83,7 +81,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public virtual void StaticEventWiring()
         {
             DefaultListableObjectFactory factory = new DefaultListableObjectFactory();

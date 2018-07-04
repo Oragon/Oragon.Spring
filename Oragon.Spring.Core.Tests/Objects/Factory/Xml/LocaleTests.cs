@@ -44,7 +44,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void LocaleTest()
         {
             CultureInfo oldCulture = Thread.CurrentThread.CurrentCulture;

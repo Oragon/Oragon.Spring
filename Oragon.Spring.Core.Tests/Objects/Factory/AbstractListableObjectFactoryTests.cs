@@ -56,7 +56,6 @@ namespace Oragon.Spring.Objects.Factory {
         /// Subclasses can override this.
         /// </summary>
         [Test]
-        [Ignore("NOT-WORKING")]
         public virtual void Count ()
         {
             AssertCount (19);
@@ -71,7 +70,6 @@ namespace Oragon.Spring.Objects.Factory {
         }
 		
         [Test]
-        [Ignore("NOT-WORKING")]
         public virtual void ObjectCount ()
         {
             AssertTestObjectCount (12);
@@ -87,7 +85,6 @@ namespace Oragon.Spring.Objects.Factory {
         }
 		
         [Test]
-        [Ignore("NOT-WORKING")]
         public virtual void GetDefinitionsForNoSuchClass ()
         {
             IList<string> defnames =
@@ -101,7 +98,6 @@ namespace Oragon.Spring.Objects.Factory {
         /// and it may even change over time).
         /// </summary>
         [Test]
-        [Ignore("NOT-WORKING")]
         public virtual void GetCountForFactoryClass ()
         {
             int count =
@@ -113,7 +109,6 @@ namespace Oragon.Spring.Objects.Factory {
         }
 		
         [Test]
-        [Ignore("NOT-WORKING")]
         public virtual void ContainsObjectDefinition ()
         {
             Assert.IsTrue (ListableObjectFactory.ContainsObjectDefinition ("rod"));

@@ -151,7 +151,7 @@ namespace Oragon.Spring.Core
         protected InvalidPropertyException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            offendingObjectType = info.GetValue("ObjectType", typeof (Type)) as Type;
+            offendingObjectType = Type.GetType(info.GetString("ObjectType"));
             offendingPropertyName = info.GetString("OffendingPropertyName");
         }
 
@@ -197,7 +197,7 @@ namespace Oragon.Spring.Core
             SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);
-            info.AddValue("ObjectType", ObjectType, typeof (Type));
+            info.AddValue("ObjectType", offendingObjectType?.ToString() ?? "", typeof (string));
             info.AddValue("OffendingPropertyName", OffendingPropertyName);
         }
 
@@ -210,4 +210,8 @@ namespace Oragon.Spring.Core
 
         #endregion
     }
+
+
+    
+
 }

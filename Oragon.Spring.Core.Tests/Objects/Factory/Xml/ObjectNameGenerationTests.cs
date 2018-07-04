@@ -46,7 +46,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void AssignObjectNames()
         {
             string className = typeof (DependenciesObject).FullName;

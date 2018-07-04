@@ -58,7 +58,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void CanApplyConstructorArgsToAbstractType()
         {
             IResource resource = new ReadOnlyXmlTestResource("ctor-args.xml", GetType());
@@ -83,7 +82,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
 
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void RefSubelementsBuildCollection()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -104,7 +102,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void RefSubelementsBuildCollectionWithPrototypes()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -130,7 +127,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void RefSubelementsBuildCollectionFromSingleElement()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -151,7 +147,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void BuildCollectionFromMixtureOfReferencesAndValues()
         {
             MixedCollectionObject.ResetStaticState();
@@ -173,7 +168,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         /// list syntax.  
         /// </summary>
         [Test]
-        [Ignore("NOT-WORKING")]
         public void CustomListCollection()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -188,7 +182,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         /// Test to see if we can set values on a collection class that uses indexers
         /// </summary>
         [Test]
-        [Ignore("NOT-WORKING")]
         public void ObjectWithIndexerProperty()
         {          
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -202,7 +195,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         /// Test that properties with name as well as id creating an alias up front.
         /// </summary>
         [Test]
-        [Ignore("NOT-WORKING")]
         public void AutoAliasing()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -258,7 +250,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         /// modify the content of collections.
         /// </summary>
         [Test]
-        [Ignore("NOT-WORKING")]
         public void AddElementsToReadOnlyList()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -317,7 +308,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void EmptyMap()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -327,7 +317,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MapWithLiteralsOnly()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -340,7 +329,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MapWithLiteralsAndReferences()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -354,7 +342,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MapWithLiteralsAndPrototypeReferences()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -375,7 +362,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void MapWithLiteralsReferencesAndList()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -417,7 +403,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void EmptySet()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -427,7 +412,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void PopulatedSet()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -441,7 +425,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void EmptyProps()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -454,7 +437,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         /// Test that an empty string value can be placed in a name-value collection
         /// </summary>
         [Test]
-        [Ignore("NOT-WORKING")]
         public void EmptyValue()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -464,7 +446,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void PopulatedProps()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -476,7 +457,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void PopulatedPropsWithSameKey()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -490,7 +470,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void DelimitedProps()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -503,7 +482,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
         
         [Test]
-        [Ignore("NOT-WORKING")]
         public void ObjectArray()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -515,7 +493,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void ClassArray()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -527,7 +504,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void GetDictionaryThatUsesEntryValueShortcut()
         {
             XmlObjectFactory xof = new XmlObjectFactory(
@@ -541,7 +517,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void GetDictionaryThatUsesStringKeysSpecifiedAsElements()
         {
             XmlObjectFactory xof = new XmlObjectFactory(
@@ -582,7 +557,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void GetDictionaryWithKeyRefAttributeShortcuts()
         {
             XmlObjectFactory xof = new XmlObjectFactory(
@@ -596,7 +570,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void GetDictionaryWithValueRefAttributeShortcuts()
         {
             XmlObjectFactory xof = new XmlObjectFactory(
@@ -640,7 +613,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void ListFactory()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -653,7 +625,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void PrototypeListFactory()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -666,7 +637,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void SetFactory()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -679,7 +649,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void PrototypeSetFactory()
         {
             IResource resource = new ReadOnlyXmlTestResource("collections.xml", GetType());
@@ -718,7 +687,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void GetDictionaryThatUsesNonStringKeys()
         {
             XmlObjectFactory xof = new XmlObjectFactory(
@@ -732,7 +700,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
         
         [Test]
-        [Ignore("NOT-WORKING")]
         public void TypedNonGenericList()
         {
             XmlObjectFactory xof = new XmlObjectFactory(new ReadOnlyXmlTestResource("collections.xml", GetType()));
@@ -744,7 +711,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void TypedNonGenericDictionary()
         {
             XmlObjectFactory xof = new XmlObjectFactory(new ReadOnlyXmlTestResource("collections.xml", GetType()));
@@ -756,7 +722,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void TypedGenericList()
         {
             XmlObjectFactory xof = new XmlObjectFactory(new ReadOnlyXmlTestResource("collections.xml", GetType()));
@@ -768,7 +733,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
         }
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void TypedGenericDictionary()
         {
             XmlObjectFactory xof = new XmlObjectFactory(new ReadOnlyXmlTestResource("collections.xml", GetType()));

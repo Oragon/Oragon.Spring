@@ -41,7 +41,6 @@ namespace Oragon.Spring.Objects.Factory.Xml
 
 
         [Test]
-        [Ignore("NOT-WORKING")]
         public void SimpleCtor()
         {
             XmlObjectFactory xof = new XmlObjectFactory(new ReadOnlyXmlTestResource("simple-constructor-arg.xml", GetType()));

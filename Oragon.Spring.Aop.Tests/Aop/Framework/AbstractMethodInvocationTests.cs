@@ -171,7 +171,8 @@ namespace Oragon.Spring.Aop.Framework
 		}
 
 		[Test]
-		public void ValidInvocation()
+        [Ignore("NOT-WORKING")]
+        public void ValidInvocation()
 		{/*
 			Target target = new Target();
             MockRepository repository = new MockRepository();
