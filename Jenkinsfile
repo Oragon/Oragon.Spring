@@ -27,9 +27,11 @@ pipeline {
 
             steps {
 
-                sh 'dotnet test ./Oragon.Spring.Core.Tests/Oragon.Spring.Core.Tests.csproj --configuration Debug --output ../output--core-tests'
+                // sh 'dotnet test ./Oragon.Spring.Core.Tests/Oragon.Spring.Core.Tests.csproj --configuration Debug --output ../output--core-tests'
 
-                sh 'dotnet test ./Oragon.Spring.Aop.Tests/Oragon.Spring.Aop.Tests.csproj --configuration Debug --output ../output-aop-tests'                
+                // sh 'dotnet test ./Oragon.Spring.Aop.Tests/Oragon.Spring.Aop.Tests.csproj --configuration Debug --output ../output-aop-tests'
+
+                echo 'Disabled at this time'
 
             }
 
@@ -48,6 +50,8 @@ pipeline {
                         sh 'dotnet pack ./Oragon.Spring.Core/Oragon.Spring.Core.csproj --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
                         
                         sh 'dotnet pack ./Oragon.Spring.Aop/Oragon.Spring.Aop.csproj --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
+                        
+                        sh 'dotnet pack ./Oragon.Spring.Extensions.DependencyInjection/Oragon.Spring.Extensions.DependencyInjection.csproj --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
 
                     } else if (env.BRANCH_NAME.endsWith("-beta")) {
 
@@ -55,11 +59,15 @@ pipeline {
                         
                         sh 'dotnet pack ./Oragon.Spring.Aop/Oragon.Spring.Aop.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'                        
 
+                        sh 'dotnet pack ./Oragon.Spring.Extensions.DependencyInjection/Oragon.Spring.Extensions.DependencyInjection.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'                        
+
                     } else {
 
                         sh 'dotnet pack ./Oragon.Spring.Core/Oragon.Spring.Core.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'
                         
                         sh 'dotnet pack ./Oragon.Spring.Aop/Oragon.Spring.Aop.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'
+
+                        sh 'dotnet pack ./Oragon.Spring.Extensions.DependencyInjection/Oragon.Spring.Extensions.DependencyInjection.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'
 
                     }
 
@@ -87,9 +95,9 @@ pipeline {
 
                     } else if (env.BRANCH_NAME.endsWith("-beta")) {
 
-                        withCredentials([usernamePassword(credentialsId: 'myget-oragon', passwordVariable: 'MYGET_KEY', usernameVariable: 'DUMMY')]) {
+                        withCredentials([usernamePassword(credentialsId: 'nuget-luizcarlosfaria', passwordVariable: 'NUGET_KEY', usernameVariable: 'DUMMY')]) {
 
-                            sh 'dotnet nuget push $(ls ./output-packages/*.nupkg)  -k "$MYGET_KEY" -s https://www.myget.org/F/oragon-beta/api/v3/index.json'
+                            sh 'dotnet nuget push $(ls ./output-packages/*.nupkg)  -k "$NUGET_KEY"'
 
                         }
 
