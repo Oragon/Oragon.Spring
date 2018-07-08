@@ -33,9 +33,11 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 
         public object GetRequiredService(Type serviceType)
         {
+#if DEBUG
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"SpringServiceProvider.GetRequiredService({serviceType.ToString()})");
-
+#endif
             var returnValue = this.GetService(serviceType);
 
             return returnValue ?? throw new NoElementsException();
@@ -43,8 +45,10 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 
         public object GetService(Type serviceType)
         {
+#if DEBUG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"SpringServiceProvider.GetService({serviceType.ToString()})");
+#endif
             var returnValue = this.GetServiceInternal(serviceType);
 
             if (returnValue == null)
