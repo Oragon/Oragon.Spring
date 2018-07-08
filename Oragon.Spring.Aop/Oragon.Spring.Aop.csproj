@@ -10,7 +10,7 @@
         <Company>oragon.io</Company>
         <Product>Oragon</Product>
         <PackageTags>Oragon, Architecture, luiz, carlos, faria, luizcarlosfaria, oragonarchitect</PackageTags>
-        <PackageIconUrl>http://luizcarlosfaria.net/wp-content/uploads/2014/03/Oragon-Architecture-Penknife.export.png</PackageIconUrl>
+        <PackageIconUrl>http://gago.io/wp-content/uploads/2014/03/Oragon-Architecture-Penknife.export.png</PackageIconUrl>
         <PackageProjectUrl>https://github.com/Oragon/Oragon.Spring</PackageProjectUrl>
         <Copyright>Copyright 2018</Copyright>
         <Description>Oragon.Spring.Aop port to .NET Standard 2.0</Description>
