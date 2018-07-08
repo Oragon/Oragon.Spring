@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <DockerTargetOS>Linux</DockerTargetOS>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="0.17.1754972" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Oragon.Spring.Aop\Oragon.Spring.Aop.csproj" />
+        <ProjectReference Include="..\Oragon.Spring.Core\Oragon.Spring.Core.csproj" />
+        <ProjectReference Include="..\Oragon.Spring.Extensions.DependencyInjection\Oragon.Spring.Extensions.DependencyInjection.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="AppContext.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Authors>LuizCarlosFaria</Authors>
+        <Company>oragon.io</Company>
+        <Product>Oragon</Product>
+        <Description>Oragon.Spring.Core port to .NET Standard 2.0</Description>
+        <Copyright>Copyright 2018</Copyright>
+        <PackageProjectUrl>https://github.com/Oragon/Oragon.Spring</PackageProjectUrl>
+        <PackageIconUrl>http://gago.io/wp-content/uploads/2014/03/Oragon-Architecture-Penknife.export.png</PackageIconUrl>
+        <RepositoryUrl>https://github.com/Oragon/Oragon.Spring</RepositoryUrl>
+        <PackageTags>Oragon Architecture,  Oragon, Architecture, luiz, carlos, faria, luizcarlosfaria, oragonarchitect</PackageTags>
+        <Version>1.0.0-alpha</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        
+        <ProjectReference Include="..\Oragon.Spring.Core\Oragon.Spring.Core.csproj" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
+    </ItemGroup>
+
+</Project>
