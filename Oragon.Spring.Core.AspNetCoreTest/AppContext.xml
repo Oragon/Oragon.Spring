@@ -6,6 +6,6 @@
         <property name="Return" value="Pong!" />
     </object>
 
-    <object type="Oragon.Spring.Core.AspNetCoreTest.Controllers.ValuesController, Oragon.Spring.Core.AspNetCoreTest"></object>
+    
 
 </objects>
