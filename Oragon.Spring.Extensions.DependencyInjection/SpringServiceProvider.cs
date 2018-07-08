@@ -24,7 +24,7 @@ namespace Oragon.Spring.Extensions.DependencyInjection
                 CaseSensitive = true,
                 Name = "root",
                 ConfigurationLocations = configurationLocations,
-                ParentContext = services.BuildContainerFromServiceCollection(this)
+                //ParentContext = services.BuildContainerFromServiceCollection(this)
             });
 
             services.AddScoped<IServiceScopeFactory>(it => new SpringServiceScopeFactory((SpringServiceProvider)it));
