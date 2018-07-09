@@ -88,8 +88,8 @@ pipeline {
                     if (env.BRANCH_NAME.endsWith("-alpha")) {
                         
                         withCredentials([usernamePassword(credentialsId: 'myget-oragon', passwordVariable: 'MYGET_KEY', usernameVariable: 'DUMMY' )]) {
-
-                            sh 'dotnet nuget push $(ls ./output-packages/*.nupkg)  -k "$MYGET_KEY" -s https://www.myget.org/F/oragon-alpha/api/v3/index.json'
+                            
+                            sh 'for pkg in ./output-packages/*.nupkg ; do dotnet nuget push "$pkg" -k "$MYGET_KEY" -s https://www.myget.org/F/oragon-alpha/api/v3/index.json ; done'
 
                         }
 
@@ -97,7 +97,7 @@ pipeline {
 
                         withCredentials([usernamePassword(credentialsId: 'nuget-luizcarlosfaria', passwordVariable: 'NUGET_KEY', usernameVariable: 'DUMMY')]) {
 
-                            sh 'dotnet nuget push $(ls ./output-packages/*.nupkg)  -k "$NUGET_KEY"'
+                            sh 'for pkg in ./output-packages/*.nupkg ; do dotnet nuget push "$pkg" -k "$NUGET_KEY" ; done'
 
                         }
 
@@ -106,7 +106,7 @@ pipeline {
 
                         withCredentials([usernamePassword(credentialsId: 'nuget-luizcarlosfaria', passwordVariable: 'NUGET_KEY', usernameVariable: 'DUMMY')]) {
 
-                            sh 'dotnet nuget push $(ls ./output-packages/*.nupkg)  -k "$NUGET_KEY"'
+                            sh 'for pkg in ./output-packages/*.nupkg ; do dotnet nuget push "$pkg" -k "$NUGET_KEY" ; done'
 
                         }
 
