@@ -7,11 +7,21 @@ using System.Linq;
 
 namespace Oragon.Spring.Extensions.DependencyInjection
 {
+    /// <summary>
+    /// Implements IServiceProvider and ISupportRequiredService for .NET Core Dependency Injection infrastructure.
+    ///
+    /// </summary>
     public class SpringServiceProvider : IServiceProvider, ISupportRequiredService
     {
         private readonly IApplicationContext container;
         private readonly ServiceProvider original;
+        private readonly Type serviceScopeFactoryInterfaceType = typeof(IServiceScopeFactory);
 
+        /// <summary>
+        /// Create a new SpringServiceProvider
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configurationLocations"></param>
         internal SpringServiceProvider(IServiceCollection services, string[] configurationLocations = null)
         {
             if (configurationLocations == null || configurationLocations.Length == 0)
@@ -31,6 +41,13 @@ namespace Oragon.Spring.Extensions.DependencyInjection
             this.original = services.BuildServiceProvider();
         }
 
+        /// <summary>
+		/// Gets service of type <paramref name="serviceType" /> from the <see cref="T:System.IServiceProvider" /> implementing
+		/// this interface.
+		/// </summary>
+		/// <param name="serviceType">An object that specifies the type of service object to get.</param>
+		/// <returns>A service object of type <paramref name="serviceType" />.
+		/// Throws an exception if the <see cref="T:System.IServiceProvider" /> cannot create the object.</returns>
         public object GetRequiredService(Type serviceType)
         {
 #if DEBUG
@@ -43,6 +60,12 @@ namespace Oragon.Spring.Extensions.DependencyInjection
             return returnValue ?? throw new NoElementsException();
         }
 
+
+        /// <summary>
+        /// Gets the service object of the specified type.
+        /// </summary>
+        /// <param name="serviceType">An object that specifies the type of service object to get.</param>
+        /// <returns>A service object of type serviceType. -or- null if there is no service object</returns>
         public object GetService(Type serviceType)
         {
 #if DEBUG
@@ -64,7 +87,11 @@ namespace Oragon.Spring.Extensions.DependencyInjection
             return returnValue;
         }
 
-        private Type serviceScopeFactoryInterfaceType = typeof(IServiceScopeFactory);
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="serviceType"></param>
+        /// <returns></returns>
         private Object GetServiceInternal(Type serviceType)
         {
             if (serviceType.IsAssignableFrom(serviceScopeFactoryInterfaceType))
@@ -76,6 +103,5 @@ namespace Oragon.Spring.Extensions.DependencyInjection
                 return this.original.GetService(serviceType);
             }
         }
-
     }
 }

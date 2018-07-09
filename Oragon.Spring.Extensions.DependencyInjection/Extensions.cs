@@ -1,13 +1,21 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
-using Oragon.Spring.Context.Support;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Oragon.Spring.Extensions.DependencyInjection
 {
+
+    /// <summary>
+    /// Extensions methods for adapt .NET Core Dependency Injection model to Spring.NET model
+    /// </summary>
     public static class Extensions
     {
+
+        /// <summary>
+        /// Integrate with Spring.NET creating SpringServiceProvider as a .NET Core Service Provider
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configurationLocations"></param>
+        /// <returns>Returns a new SpringServiceProvider</returns>
         public static IServiceProvider WithSpring(this IServiceCollection services, params string[] configurationLocations)
         {
             return new SpringServiceProvider(services, configurationLocations);
