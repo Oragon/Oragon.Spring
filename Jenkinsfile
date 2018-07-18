@@ -51,7 +51,7 @@ pipeline {
                         
                         sh 'dotnet pack ./Oragon.Spring.Aop/Oragon.Spring.Aop.csproj --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
                         
-                        sh 'dotnet pack ./Oragon.Spring.Aop.Contexts/Oragon.Spring.Aop.Contexts --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
+                        sh 'dotnet pack ./Oragon.Spring.Aop.Contexts/Oragon.Spring.Aop.Contexts.csproj --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
                         
                         sh 'dotnet pack ./Oragon.Spring.Extensions.DependencyInjection/Oragon.Spring.Extensions.DependencyInjection.csproj --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
 
