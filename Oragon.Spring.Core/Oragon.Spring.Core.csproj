@@ -16,9 +16,6 @@
         <Version>1.0.0-alpha</Version>
         <Copyright>Copyright 2018</Copyright>
         <PackageTags>Oragon Architecture,  Oragon, Architecture, luiz, carlos, faria, luizcarlosfaria, oragonarchitect</PackageTags>
-    </PropertyGroup>
-
-    <PropertyGroup>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 

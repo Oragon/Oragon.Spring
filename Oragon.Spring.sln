@@ -14,7 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oragon.Spring", "Oragon.Spr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oragon.Spring.Aop.Tests", "Oragon.Spring.Aop.Tests\Oragon.Spring.Aop.Tests.csproj", "{6D417358-A415-42CF-A9B5-9964B50D4589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oragon.Spring.Extensions.DependencyInjection", "Oragon.Spring.Extensions.DependencyInjection\Oragon.Spring.Extensions.DependencyInjection.csproj", "{011FB229-68F1-4BED-B552-9EF7C4FDEEF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oragon.Spring.Extensions.DependencyInjection", "Oragon.Spring.Extensions.DependencyInjection\Oragon.Spring.Extensions.DependencyInjection.csproj", "{011FB229-68F1-4BED-B552-9EF7C4FDEEF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oragon.Spring.Aop.Contexts", "Oragon.Spring.Aop.Contexts\Oragon.Spring.Aop.Contexts.csproj", "{B6619F58-B402-44D5-9CAA-88397F7B4AAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{011FB229-68F1-4BED-B552-9EF7C4FDEEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{011FB229-68F1-4BED-B552-9EF7C4FDEEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{011FB229-68F1-4BED-B552-9EF7C4FDEEF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6619F58-B402-44D5-9CAA-88397F7B4AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6619F58-B402-44D5-9CAA-88397F7B4AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6619F58-B402-44D5-9CAA-88397F7B4AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6619F58-B402-44D5-9CAA-88397F7B4AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +58,7 @@ Global
 		{4AEAC1D6-2249-4727-8C8E-17DF6424685A} = {95BD85CA-B3E5-4A72-B4AC-178BAC7B0FDE}
 		{6D417358-A415-42CF-A9B5-9964B50D4589} = {95BD85CA-B3E5-4A72-B4AC-178BAC7B0FDE}
 		{011FB229-68F1-4BED-B552-9EF7C4FDEEF7} = {C441446A-A324-4C26-A350-21F3F1541F36}
+		{B6619F58-B402-44D5-9CAA-88397F7B4AAB} = {C441446A-A324-4C26-A350-21F3F1541F36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEF2D9F0-F6BC-4C5E-9EC7-01845D607FB7}
