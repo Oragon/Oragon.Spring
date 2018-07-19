@@ -48,30 +48,24 @@ pipeline {
                     if (env.BRANCH_NAME.endsWith("-alpha")) {
 
                         sh 'dotnet pack ./Oragon.Spring.Core/Oragon.Spring.Core.csproj --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
-                        
+
                         sh 'dotnet pack ./Oragon.Spring.Aop/Oragon.Spring.Aop.csproj --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
-                        
-                        sh 'dotnet pack ./Oragon.Spring.Aop.Contexts/Oragon.Spring.Aop.Contexts.csproj --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
-                        
+
                         sh 'dotnet pack ./Oragon.Spring.Extensions.DependencyInjection/Oragon.Spring.Extensions.DependencyInjection.csproj --configuration Debug /p:PackageVersion="$BRANCH_NAME" --include-source --include-symbols --output ../output-packages'
 
                     } else if (env.BRANCH_NAME.endsWith("-beta")) {
 
                         sh 'dotnet pack ./Oragon.Spring.Core/Oragon.Spring.Core.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'                        
-                        
+
                         sh 'dotnet pack ./Oragon.Spring.Aop/Oragon.Spring.Aop.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'                        
-                        
-                        sh 'dotnet pack ./Oragon.Spring.Aop.Contexts/Oragon.Spring.Aop.Contexts.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'                        
 
                         sh 'dotnet pack ./Oragon.Spring.Extensions.DependencyInjection/Oragon.Spring.Extensions.DependencyInjection.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'                        
 
                     } else {
 
                         sh 'dotnet pack ./Oragon.Spring.Core/Oragon.Spring.Core.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'
-                        
+
                         sh 'dotnet pack ./Oragon.Spring.Aop/Oragon.Spring.Aop.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'
-                        
-                        sh 'dotnet pack ./Oragon.Spring.Aop.Contexts/Oragon.Spring.Aop.Contexts.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'
 
                         sh 'dotnet pack ./Oragon.Spring.Extensions.DependencyInjection/Oragon.Spring.Extensions.DependencyInjection.csproj --configuration Release /p:PackageVersion="$BRANCH_NAME" --output ../output-packages'
 
