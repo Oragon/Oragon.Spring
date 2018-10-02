@@ -3,6 +3,7 @@ using Oragon.Spring.Collections;
 using Oragon.Spring.Context;
 using Oragon.Spring.Context.Support;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Oragon.Spring.Extensions.DependencyInjection
@@ -29,7 +30,7 @@ namespace Oragon.Spring.Extensions.DependencyInjection
                 configurationLocations = new[] { @".\AppContext.xml" };
             }
 
-            this.container = new XmlApplicationContext(new XmlApplicationContextArgs()
+            container = new XmlApplicationContext(new XmlApplicationContextArgs()
             {
                 CaseSensitive = true,
                 Name = "root",
@@ -38,7 +39,7 @@ namespace Oragon.Spring.Extensions.DependencyInjection
             });
 
             services.AddScoped<IServiceScopeFactory>(it => new SpringServiceScopeFactory((SpringServiceProvider)it));
-            this.original = services.BuildServiceProvider();
+            original = services.BuildServiceProvider();
         }
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Oragon.Spring.Extensions.DependencyInjection
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"SpringServiceProvider.GetRequiredService({serviceType.ToString()})");
 #endif
-            var returnValue = this.GetService(serviceType);
+            object returnValue = GetService(serviceType);
 
             return returnValue ?? throw new NoElementsException();
         }
@@ -72,14 +73,16 @@ namespace Oragon.Spring.Extensions.DependencyInjection
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"SpringServiceProvider.GetService({serviceType.ToString()})");
 #endif
-            var returnValue = this.GetServiceInternal(serviceType);
+            object returnValue = GetServiceInternal(serviceType);
 
             if (returnValue == null)
             {
-                var itemFound = container.GetObjectsOfType(serviceType);
-                if (itemFound.Any() == false)
+                IApplicationContext currentContext = container;
+                IDictionary<string, object> itemFound = null;
+                while ((itemFound == null || !itemFound.Any()) && currentContext != null)
                 {
-                    itemFound = container.ParentContext.GetObjectsOfType(serviceType);
+                    itemFound = container.GetObjectsOfType(serviceType);
+                    currentContext = container.ParentContext;
                 }
                 returnValue = itemFound.Any() ? itemFound.Values.First() : returnValue;
             }
@@ -100,7 +103,7 @@ namespace Oragon.Spring.Extensions.DependencyInjection
             }
             else
             {
-                return this.original.GetService(serviceType);
+                return original.GetService(serviceType);
             }
         }
     }
