@@ -5,8 +5,8 @@
 - [Example of a simple web API using Oragon.Spring](#example-of-a-simple-web-api-using-oragonspring)
 	- [1. Build the application](#1-build-the-application)
 		- [1.1 Run local (debug mode)](#11-run-local-debug-mode)
-			- [Test the app](#test-the-app)
-			- [In browser result](#in-browser-result)
+			- [Test the app (in shell)](#test-the-app-in-shell)
+			- [In browser](#in-browser)
 	- [2. Run in docker](#2-run-in-docker)
 		- [2.1 Install Docker for your plataform](#21-install-docker-for-your-plataform)
 	- [3. Run the application](#3-run-the-application)
@@ -21,9 +21,9 @@ $ cd path/to/root/of/oragon
 $ cd Oragon.Spring.Core.AspNetCoreTest
 $ dotnet run 
 ```
-#### Test the app
-- Open the [http://localhost:5000/api/values](http://localhost:5000/api/values) inyour browser;
-Or type these command in your shell
+#### Test the app (in shell)
+- Open the [http://localhost:5000/api/values](http://localhost:5000/api/values) in your browser;
+- Or type the following command in your shell
 ```shell
 $ curl --request GET --url http://localhost:5000/api/values --header 'cache-control: no-cache'
 ```
@@ -31,7 +31,7 @@ $ curl --request GET --url http://localhost:5000/api/values --header 'cache-cont
 ```shell
 ["value1","value2","Pong!","Pong!"]
 ```
-#### In browser result
+#### In browser
 ![](assets/print1-sample.png)
 
 ## 2. Run in docker
