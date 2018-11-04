@@ -4,11 +4,12 @@ RUN mkdir /app
 WORKDIR /app
 
 
-ADD ./Oragon.Spring.sln                                                 /app
-ADD ./Oragon.Spring.Aop/Oragon.Spring.Aop.csproj                        /app/Oragon.Spring.Aop/
-ADD ./Oragon.Spring.Aop.Tests/Oragon.Spring.Aop.Tests.csproj            /app/Oragon.Spring.Aop.Tests/
-ADD ./Oragon.Spring.Core/Oragon.Spring.Core.csproj                      /app/Oragon.Spring.Core/
-ADD ./Oragon.Spring.Core.Tests/Oragon.Spring.Core.Tests.csproj          /app/Oragon.Spring.Core.Tests/
+ADD ./Oragon.Spring.sln                                                                                 /app
+ADD ./Oragon.Spring.Aop/Oragon.Spring.Aop.csproj                                                        /app/Oragon.Spring.Aop/
+ADD ./Oragon.Spring.Aop.Tests/Oragon.Spring.Aop.Tests.csproj                                            /app/Oragon.Spring.Aop.Tests/
+ADD ./Oragon.Spring.Core/Oragon.Spring.Core.csproj                                                      /app/Oragon.Spring.Core/
+ADD ./Oragon.Spring.Core.Tests/Oragon.Spring.Core.Tests.csproj                                          /app/Oragon.Spring.Core.Tests/
+ADD ./Oragon.Spring.Extensions.DependencyInjection/Oragon.Spring.Extensions.DependencyInjection.csproj  /app/Oragon.Spring.Extensions.DependencyInjection/
 
 # RUN find .
 
