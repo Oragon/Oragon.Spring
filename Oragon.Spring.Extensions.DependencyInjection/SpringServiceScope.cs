@@ -10,13 +10,16 @@ namespace Oragon.Spring.Extensions.DependencyInjection
     {
         private SpringServiceProvider springServiceProvider;
 
+        private IServiceScope originalServiceScope;
         /// <summary>
         /// Create a new instance of SpringServiceScope
         /// </summary>
         /// <param name="springServiceProvider"></param>
         public SpringServiceScope(SpringServiceProvider springServiceProvider)
         {
-            this.springServiceProvider = springServiceProvider;
+            this.originalServiceScope = springServiceProvider.OriginalScopeFactory.CreateScope();
+
+            this.springServiceProvider = new SpringServiceProvider(springServiceProvider, this.originalServiceScope.ServiceProvider);
         }
 
         /// <summary>
@@ -30,6 +33,7 @@ namespace Oragon.Spring.Extensions.DependencyInjection
         public void Dispose()
         {
             this.springServiceProvider = null;
+            this.originalServiceScope.Dispose();
         }
     }
 }
