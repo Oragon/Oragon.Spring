@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker { 
             alwaysPull false
-            image 'microsoft/dotnet:2.1-sdk'
+            image 'mcr.microsoft.com/dotnet/core/sdk:3.0'
             reuseNode false
             args '-u root:root'
         }
