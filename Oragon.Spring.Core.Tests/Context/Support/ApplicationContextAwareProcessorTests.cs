@@ -126,8 +126,6 @@ namespace Oragon.Spring.Context.Support
 			AppDomain domain = null;
 			try
 			{
-				AppDomainSetup setup = new AppDomainSetup();
-				setup.ApplicationBase = Environment.CurrentDirectory;
 				domain = AppDomain.CreateDomain("Spring");
 				object foo = domain.CreateInstanceAndUnwrap(GetType().Assembly.FullName, typeof(MockContextAwareObject).FullName);
 	

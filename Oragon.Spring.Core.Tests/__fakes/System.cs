@@ -27,11 +27,7 @@ namespace System
 
     }
 
-    public class AppDomainSetup
-    {
-        public string ApplicationBase;
-    }
-
+  
     public class Evidence
     {
         private object v;

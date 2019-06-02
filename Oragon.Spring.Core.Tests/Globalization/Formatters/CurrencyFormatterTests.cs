@@ -88,22 +88,7 @@ namespace Oragon.Spring.Globalization.Formatters
                 Assert.AreEqual("-1.234,56 Din.", fmt.Format(-1234.56));
             }
 
-            fmt = new CurrencyFormatter(CultureInfoUtils.SerbianCyrillicCultureName);
-
-            if (CultureInfoUtils.OperatingSystemIsAfterWindows7 && CultureInfoUtils.ClrIsVersion4OrLater)
-            {
-                Assert.AreEqual("1.234,00 дин.", fmt.Format(1234));
-                Assert.AreEqual("1.234,56 дин.", fmt.Format(1234.56));
-                Assert.AreEqual("-1.234,00 дин.", fmt.Format(-1234));
-                Assert.AreEqual("-1.234,56 дин.", fmt.Format(-1234.56));
-            }
-            else
-            {
-                Assert.AreEqual("1.234,00 Дин.", fmt.Format(1234));
-                Assert.AreEqual("1.234,56 Дин.", fmt.Format(1234.56));
-                Assert.AreEqual("-1.234,00 Дин.", fmt.Format(-1234));
-                Assert.AreEqual("-1.234,56 Дин.", fmt.Format(-1234.56));
-            }
+            
 
         }
 
@@ -232,24 +217,7 @@ namespace Oragon.Spring.Globalization.Formatters
             Assert.AreEqual(-1234, fmt.Parse("-1.234,00 din"));
             Assert.AreEqual(-1234.56, fmt.Parse("-1.234,56 din"));
 
-            fmt = new CurrencyFormatter(CultureInfoUtils.SerbianCyrillicCultureName);
-            fmt.GroupSizes = new int[] { 1, 2 };
-            fmt.GroupSeparator = "'";
-
-            if (CultureInfoUtils.OperatingSystemIsAfterWindows7 && CultureInfoUtils.ClrIsVersion4OrLater)
-            {
-                Assert.AreEqual(1234, fmt.Parse("1'23'4,00 дин."));
-                Assert.AreEqual(1234.56, fmt.Parse("1'23'4,56 дин."));
-                Assert.AreEqual(-1234, fmt.Parse("-1'23'4,00 дин."));
-                Assert.AreEqual(-1234.56, fmt.Parse("-1'23'4,56 дин."));
-            }
-            else
-            {
-                Assert.AreEqual(1234, fmt.Parse("1'23'4,00 Дин."));
-                Assert.AreEqual(1234.56, fmt.Parse("1'23'4,56 Дин."));
-                Assert.AreEqual(-1234, fmt.Parse("-1'23'4,00 Дин."));
-                Assert.AreEqual(-1234.56, fmt.Parse("-1'23'4,56 Дин."));
-            }
+            
 
         }
 #endif

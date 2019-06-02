@@ -12,7 +12,12 @@ namespace Oragon.Spring.Core.AspNetCoreTest.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get([FromServices] DummyService dummyService1, [FromServices] IDummyService dummyService2)
         {
-            return new string[] { "value1", "value2", dummyService1.Ping(), dummyService2.Ping() };
+            return new string[] {
+                "value1",
+                "value2",
+                dummyService1.Ping(),
+                dummyService2.Ping()
+            };
         }
 
 
