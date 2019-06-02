@@ -15,13 +15,14 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 
         public SpringServiceProviderFactory(params string[] configurationLocations)
         {
-            this.configurationLocations = configurationLocations;
-
-            if (configurationLocations.Length == 0 || configurationLocations == null)
+            if (configurationLocations == null || configurationLocations.Length == 0)
             {
                 this.configurationLocations = new[] { @".\AppContext.xml" };
             }
-
+            else
+            {
+                this.configurationLocations = configurationLocations;
+            }
         }
 
         public XmlApplicationContext CreateBuilder(IServiceCollection services)
@@ -52,11 +53,11 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 
             IDictionary<string, object> rootObjects = applicationContext.GetObjectsOfType(typeof(object));
 
-            foreach (var item in rootObjects.Where(it => !blackList.Contains(it.Key)))
+            foreach (var item in rootObjects.Where(it => !string.IsNullOrWhiteSpace(it.Key) && !blackList.Contains(it.Key)))
             {
                 Type objectType = item.Value.GetType();
-                
-                services.AddTransient(objectType, sp => item.Value);
+
+                services.AddTransient(objectType, sp => applicationContext.GetObject(item.Key));
 
                 Type[] interfaces = objectType.GetInterfaces();
 
@@ -66,7 +67,7 @@ namespace Oragon.Spring.Extensions.DependencyInjection
                     foreach (var serviceType in interfaces)
                     {
 
-                        services.AddTransient(serviceType, sp => item.Value);
+                        services.AddTransient(serviceType, sp => applicationContext.GetObject(item.Key));
 
                     }
 
