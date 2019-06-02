@@ -813,8 +813,6 @@ namespace Oragon.Spring.Aop.Framework
             AppDomain domain = null;
             try
             {
-                AppDomainSetup setup = new AppDomainSetup();
-                setup.ApplicationBase = Environment.CurrentDirectory;
                 domain = AppDomain.CreateDomain("Spring");
                 object command = domain.CreateInstanceAndUnwrap(GetType().Assembly.FullName, typeof(RemotableCommand).FullName);
 
