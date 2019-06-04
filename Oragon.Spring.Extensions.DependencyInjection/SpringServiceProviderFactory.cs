@@ -51,9 +51,8 @@ namespace Oragon.Spring.Extensions.DependencyInjection
         {
             string[] blackList = new[] { "ServiceProvider", "messageSource" };
 
-            IDictionary<string, object> rootObjects = applicationContext.GetObjectsOfType(typeof(object));
 
-            foreach (var item in rootObjects.Where(it => !string.IsNullOrWhiteSpace(it.Key) && !blackList.Contains(it.Key)))
+            foreach (var item in applicationContext.GetObjectsOfType(typeof(object)).Where(it => !string.IsNullOrWhiteSpace(it.Key) && !blackList.Contains(it.Key) && it.Value != null))
             {
                 Type objectType = item.Value.GetType();
 
