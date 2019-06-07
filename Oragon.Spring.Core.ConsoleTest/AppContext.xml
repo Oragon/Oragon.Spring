@@ -31,7 +31,7 @@
     <object id="AllServiceOperations" type="Oragon.Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Oragon.Spring.Aop">
         <property name="Patterns">
             <list>
-                <value>Oragon.Spring.Core.ConsoleTest.*on</value>
+                <value>Oragon.Spring.Core.ConsoleTest.Pers*</value>
             </list>
         </property>
     </object>
