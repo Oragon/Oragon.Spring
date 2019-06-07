@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.0-runtime
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0
 ARG source
 WORKDIR /app
 COPY ${source:-obj/Docker/publish} .
