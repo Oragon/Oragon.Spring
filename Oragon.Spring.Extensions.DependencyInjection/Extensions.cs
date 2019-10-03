@@ -17,7 +17,7 @@ namespace Oragon.Spring.Extensions.DependencyInjection
         /// <param name="services"></param>
         /// <param name="configurationLocations"></param>
         /// <returns>Returns a new SpringServiceProvider</returns>
-        public static IHostBuilder ConfigureOragonSpring(this IHostBuilder hostBuilder, params string[] configurationLocations)
+        public static IHostBuilder ConfigureOragonSpringAsDependencyInjectionContainer(this IHostBuilder hostBuilder, params string[] configurationLocations)
             =>
             hostBuilder.UseServiceProviderFactory(new SpringServiceProviderFactory(configurationLocations));
 

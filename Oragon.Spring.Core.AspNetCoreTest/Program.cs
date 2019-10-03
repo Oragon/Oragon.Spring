@@ -21,7 +21,7 @@ namespace Oragon.Spring.Core.AspNetCoreTest
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
-        .ConfigureOragonSpring()
+        .ConfigureOragonSpringAsDependencyInjectionContainer()
         .ConfigureWebHostDefaults(webBuilder =>
         {
             webBuilder.UseStartup<Startup>();

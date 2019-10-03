@@ -10,7 +10,7 @@ namespace Oragon.Spring.Core.ConsoleTest
         public object Invoke(IMethodInvocation invocation)
         {
             Console.WriteLine("Before Call");
-            object returnValue = invocation.Proceed(); ;
+            object returnValue = invocation.Proceed();
             Console.WriteLine("After Call");
             return returnValue;
         }
