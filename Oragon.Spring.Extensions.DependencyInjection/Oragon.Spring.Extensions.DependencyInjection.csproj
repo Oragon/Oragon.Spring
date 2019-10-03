@@ -20,9 +20,9 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Oragon.Spring.Core\Oragon.Spring.Core.csproj" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0-preview5.19227.9" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.0.0-preview5.19227.9" />
-        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.0.0-preview5.19227.9" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.0.0" />
         
     </ItemGroup>
 
