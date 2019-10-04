@@ -24,75 +24,38 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 
         private static void RegisterServices(IServiceCollection services, XmlApplicationContext applicationContext)
         {
-            Dictionary<string, List<ServiceDescriptor>> itemsAdded = new Dictionary<string, List<ServiceDescriptor>>();
-
-            foreach (var descriptor in services)
+            foreach (var definition in applicationContext.ObjectFactory.GetObjectDefinitionNames().Select(it => new { Name = it, Definition = applicationContext.ObjectFactory.GetObjectDefinition(it) }))
             {
-                if (descriptor.ImplementationType != null)
+                List<Type> types = new List<Type>();
+                var interfaces = definition.Definition.ObjectType.GetInterfaces();
+                if (interfaces.Any())
                 {
-                    var name = BuildName(descriptor.ImplementationType);
-
-                    if (itemsAdded.ContainsKey(name))
-                        itemsAdded[name].Add(descriptor);
-                    else
-                        itemsAdded.Add(name, new List<ServiceDescriptor>() { descriptor });
-
-
-                    GenericObjectDefinition def = new GenericObjectDefinition();
-                    def.ObjectType = descriptor.ImplementationType;
-                    def.IsSingleton = false;
-                    def.AutowireMode = Objects.Factory.Config.AutoWiringMode.Constructor;
-                    applicationContext.ObjectFactory.RegisterObjectDefinition($"{name}#{itemsAdded[name].Count}", def);
-
-                    Console.WriteLine($"SPRING A | {name}");
-                    //Console.WriteLine("");
+                    types.AddRange(interfaces);
                 }
-                else if (descriptor.ImplementationFactory != null)
+
+                Type currentType = definition.Definition.ObjectType;
+                do
                 {
-                    var name = BuildName(descriptor.ServiceType);
-                    string FactoryObjectName = $"{name}#Factory";
+                    types.Add(currentType);
+                    currentType = currentType.BaseType;
 
-                    if (itemsAdded.ContainsKey(name))
-                        itemsAdded[name].Add(descriptor);
-                    else
-                        itemsAdded.Add(name, new List<ServiceDescriptor>() { descriptor });
-
-                    applicationContext.ObjectFactory.RegisterSingleton(FactoryObjectName, new SpringImplementationFactoryAdapter(applicationContext, descriptor));
+                } while (currentType != typeof(object));
 
 
-                    GenericObjectDefinition definition = new GenericObjectDefinition();
-                    definition.ObjectType = descriptor.ServiceType;
-                    definition.IsSingleton = descriptor.Lifetime == ServiceLifetime.Singleton;
-                    definition.FactoryObjectName = FactoryObjectName;
-                    definition.FactoryMethodName = "GetObject";
-                    applicationContext.ObjectFactory.RegisterObjectDefinition($"{name}#{itemsAdded[name].Count}", definition);
-
-                    Console.WriteLine($"SPRING B | {name}");
-                    //Console.WriteLine("");
-                }
-                else
+                foreach (var type in types)
                 {
-                    var name = BuildName(descriptor.ImplementationInstance.GetType());
-
-                    if (itemsAdded.ContainsKey(name))
-                        itemsAdded[name].Add(descriptor);
-                    else
-                        itemsAdded.Add(name, new List<ServiceDescriptor>() { descriptor });
-
-                    
-                    applicationContext.ObjectFactory.RegisterSingleton($"{name}#{itemsAdded[name].Count}", descriptor.ImplementationInstance);
-
-                    
-
-                    Console.WriteLine($"SPRING C | {name}");
-                    //Console.WriteLine("");
+                    services.AddTransient(type, (sp) =>
+                    {
+                        return applicationContext.GetObject(definition.Name);
+                    });
                 }
             }
+
         }
 
         private static void RegisterDefaults(IServiceCollection services, XmlApplicationContext applicationContext)
         {
-            applicationContext.ObjectFactory.RegisterSingleton("ServiceProvider", new SpringServiceProvider(applicationContext));
+            applicationContext.ObjectFactory.RegisterSingleton("ServiceProvider", new SpringServiceProvider(applicationContext, services));
             applicationContext.ObjectFactory.RegisterSingleton("SpringServiceScopeFactory", new SpringServiceScopeFactory(applicationContext));
         }
 

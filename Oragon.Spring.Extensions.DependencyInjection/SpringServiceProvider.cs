@@ -10,10 +10,12 @@ namespace Oragon.Spring.Extensions.DependencyInjection
     public class SpringServiceProvider : IServiceProvider, ISupportRequiredService, IDisposable
     {
         private readonly XmlApplicationContext applicationContext;
+        private readonly ServiceProvider frameworkServiecProvider;
 
-        public SpringServiceProvider(XmlApplicationContext applicationContext)
+        public SpringServiceProvider(XmlApplicationContext applicationContext, IServiceCollection services)
         {
             this.applicationContext = applicationContext;
+            this.frameworkServiecProvider = services.BuildServiceProvider();
         }
 
 
@@ -26,12 +28,15 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 
         public object GetService(Type serviceType)
         {
-            object returnValue = null;
-            IList<string> keys = this.applicationContext.GetObjectNamesForType(serviceType);
-            if (keys.Any())
+            object returnValue = frameworkServiecProvider.GetService(serviceType);
+            if (returnValue == null)
             {
-                string name = keys.Single();
-                returnValue = this.applicationContext.GetObject(name);
+                IList<string> keys = this.applicationContext.GetObjectNamesForType(serviceType);
+                if (keys.Any())
+                {
+                    string name = keys.Single();
+                    returnValue = this.applicationContext.GetObject(name);
+                }
             }
             return returnValue;
         }
