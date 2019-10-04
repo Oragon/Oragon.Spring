@@ -36,14 +36,11 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 
             ServiceProviderAdapter.Adapt(services, applicationContext);
 
-           
-            //applicationContext.ObjectFactory.RegisterSingleton("ServiceProvider", services.BuildServiceProvider());
-
             return applicationContext;
         }
 
         public IServiceProvider CreateServiceProvider(XmlApplicationContext applicationContext) =>
-            applicationContext.GetObject<ServiceProvider>("ServiceProvider");
+            applicationContext.GetObject<IServiceProvider>("ServiceProvider");
 
 
 

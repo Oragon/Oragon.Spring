@@ -20,6 +20,12 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 
         public object GetRequiredService(Type serviceType)
         {
+            object returnValue = GetService(serviceType) ?? new InvalidOperationException($"Required Service {serviceType.AssemblyQualifiedName} not found.");
+            return returnValue;
+        }
+
+        public object GetService(Type serviceType)
+        {
             object returnValue = null;
             IList<string> keys = this.applicationContext.GetObjectNamesForType(serviceType);
             if (keys.Any())
@@ -28,11 +34,6 @@ namespace Oragon.Spring.Extensions.DependencyInjection
                 returnValue = this.applicationContext.GetObject(name);
             }
             return returnValue;
-        }
-
-        public object GetService(Type serviceType)
-        {
-            throw new NotImplementedException();
         }
 
 
