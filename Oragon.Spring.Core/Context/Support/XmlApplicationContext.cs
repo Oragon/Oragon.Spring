@@ -20,6 +20,8 @@
 
 using Oragon.Spring.Core.IO;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Oragon.Spring.Context.Support
 {
@@ -83,7 +85,7 @@ namespace Oragon.Spring.Context.Support
     /// <seealso cref="Oragon.Spring.Core.IO.ConfigurableResourceLoader"/>
     public class XmlApplicationContext : AbstractXmlApplicationContext
     {
-        private readonly string[] _configurationLocations;
+        private readonly IEnumerable<string> _configurationLocations;
         private readonly IResource[] _configurationResources;
 
 
@@ -99,7 +101,7 @@ namespace Oragon.Spring.Context.Support
 
             if (args.Refresh)
             {
-                bool hasLocations = args.ConfigurationLocations.Length > 0;
+                bool hasLocations = args.ConfigurationLocations.Count() > 0;
                 bool hasResources = args.ConfigurationResources.Length > 0;
 
                 if (!hasLocations && !hasResources)
@@ -265,7 +267,7 @@ namespace Oragon.Spring.Context.Support
         /// An array of resource locations, or <see langword="null"/> if none.
         /// </returns>
         /// <seealso cref="Oragon.Spring.Context.Support.AbstractXmlApplicationContext.ConfigurationLocations"/>
-        protected override string[] ConfigurationLocations
+        protected override IEnumerable<string> ConfigurationLocations
         {
             get { return _configurationLocations; }
         }

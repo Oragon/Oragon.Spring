@@ -11,30 +11,36 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 {
     public class SpringServiceProviderFactory : IServiceProviderFactory<XmlApplicationContext>
     {
-        private readonly string[] configurationLocations;
+        private OptionsBuilder config;
 
-        public SpringServiceProviderFactory(params string[] configurationLocations)
+        public SpringServiceProviderFactory(Action<OptionsBuilder> configFunc)
         {
-            if (configurationLocations == null || configurationLocations.Length == 0)
+            var memConfig = new OptionsBuilder();
+            configFunc?.Invoke(memConfig);
+
+            if (memConfig.ConfigLocations.Any() == false)
             {
-                this.configurationLocations = new[] { @".\AppContext.xml" };
+                memConfig.AddConfigLocation(@".\Oragon.Spring.xml");
             }
-            else
-            {
-                this.configurationLocations = configurationLocations;
-            }
+
+            this.config = memConfig;
         }
 
         public XmlApplicationContext CreateBuilder(IServiceCollection services)
         {
-            XmlApplicationContext applicationContext = new XmlApplicationContext(new XmlApplicationContextArgs()
+            var rootApplicationContext = new CodeConfigApplicationContext(caseSensitive: true);
+
+            ServiceProviderAdapter.RegisterBridges(rootApplicationContext, this.config, services);
+
+            var applicationContext = new XmlApplicationContext(new XmlApplicationContextArgs()
             {
                 CaseSensitive = true,
                 Name = "root",
-                ConfigurationLocations = this.configurationLocations,
+                ConfigurationLocations = this.config.ConfigLocations.AsEnumerable(),
+                ParentContext = rootApplicationContext
             });
 
-            ServiceProviderAdapter.Adapt(services, applicationContext);
+            ServiceProviderAdapter.Adapt(services, applicationContext, this.config);
 
             return applicationContext;
         }

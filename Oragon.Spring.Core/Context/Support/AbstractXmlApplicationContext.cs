@@ -29,6 +29,8 @@ using Oragon.Spring.Objects.Factory.Support;
 using Oragon.Spring.Objects.Factory.Xml;
 using Oragon.Spring.Util;
 using Oragon.Spring.Core.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 #endregion
 
@@ -97,7 +99,7 @@ namespace Oragon.Spring.Context.Support
         /// <returns>
         /// An array of resource locations, or <see langword="null"/> if none.
         /// </returns>
-        protected abstract string[] ConfigurationLocations { get; }
+        protected abstract IEnumerable<string> ConfigurationLocations { get; }
 
 
         /// <summary>
@@ -224,10 +226,10 @@ namespace Oragon.Spring.Context.Support
         /// </exception>
         protected virtual void LoadObjectDefinitions(XmlObjectDefinitionReader objectDefinitionReader)
         {
-            string[] locations = ConfigurationLocations;
+            IEnumerable<string> locations = ConfigurationLocations;
             if (locations != null)
             {
-                objectDefinitionReader.LoadObjectDefinitions(locations);
+                objectDefinitionReader.LoadObjectDefinitions(locations.ToArray());
             }
 
             IResource[] resources = ConfigurationResources;

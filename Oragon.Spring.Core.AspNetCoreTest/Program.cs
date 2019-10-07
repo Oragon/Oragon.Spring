@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Oragon.Spring.Extensions.DependencyInjection;
 using System;
@@ -21,7 +22,9 @@ namespace Oragon.Spring.Core.AspNetCoreTest
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
-        .ConfigureOragonSpringAsDependencyInjectionContainer()
+        .ConfigureOragonSpring(options => { 
+            options.MakeBridgeFor<IConfiguration>("Configuration"); 
+        })
         .ConfigureWebHostDefaults(webBuilder =>
         {
             webBuilder.UseStartup<Startup>();

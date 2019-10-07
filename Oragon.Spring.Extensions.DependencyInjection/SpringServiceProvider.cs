@@ -9,10 +9,10 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 {
     public class SpringServiceProvider : IServiceProvider, ISupportRequiredService, IDisposable
     {
-        private readonly XmlApplicationContext applicationContext;
+        private readonly AbstractApplicationContext applicationContext;
         private readonly ServiceProvider frameworkServiecProvider;
 
-        public SpringServiceProvider(XmlApplicationContext applicationContext, IServiceCollection services)
+        public SpringServiceProvider(AbstractApplicationContext applicationContext, IServiceCollection services)
         {
             this.applicationContext = applicationContext;
             this.frameworkServiecProvider = services.BuildServiceProvider();

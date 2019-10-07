@@ -19,6 +19,7 @@
 #endregion
 
 using Oragon.Spring.Core.IO;
+using System.Collections.Generic;
 
 namespace Oragon.Spring.Context.Support
 {
@@ -26,7 +27,7 @@ namespace Oragon.Spring.Context.Support
     {
         private bool _caseSensitive;
 
-        private string[] _configurationLocations;
+        private IEnumerable<string> _configurationLocations;
 
         private IResource[] _configurationResources;
 
@@ -48,7 +49,7 @@ namespace Oragon.Spring.Context.Support
             }
         }
 
-        public virtual string[] ConfigurationLocations
+        public virtual IEnumerable<string> ConfigurationLocations
         {
             get
             {

@@ -15,14 +15,35 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 
         static Type[] typeBlackList = new[] { typeof(IServiceProvider), typeof(ISupportRequiredService), typeof(IServiceScopeFactory) };
 
-        internal static void Adapt(IServiceCollection services, XmlApplicationContext applicationContext)
+        internal static void Adapt(IServiceCollection services, AbstractApplicationContext applicationContext, OptionsBuilder config)
         {
             RegisterServices(services, applicationContext);
 
             RegisterDefaults(services, applicationContext);
+
+            //RegisterBridges(applicationContext, config);
         }
 
-        private static void RegisterServices(IServiceCollection services, XmlApplicationContext applicationContext)
+        public static void RegisterBridges(AbstractApplicationContext applicationContext, OptionsBuilder config, IServiceCollection services)
+        {
+            var serviceProvider = services.BuildServiceProvider();
+
+            foreach (var replica in config.Replications)
+            {
+                if (replica.Singleton)
+                {
+                    var singletonInstance = serviceProvider.GetService(replica.Type);
+
+                    applicationContext.ObjectFactory.RegisterSingleton(replica.Name, singletonInstance);
+                }
+                else
+                {
+                    throw new NotImplementedException("Non singleton replica is not working yet");
+                }
+            }
+        }
+
+        private static void RegisterServices(IServiceCollection services, AbstractApplicationContext applicationContext)
         {
             foreach (var definition in applicationContext.ObjectFactory.GetObjectDefinitionNames().Select(it => new { Name = it, Definition = applicationContext.ObjectFactory.GetObjectDefinition(it) }))
             {
@@ -53,7 +74,7 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 
         }
 
-        private static void RegisterDefaults(IServiceCollection services, XmlApplicationContext applicationContext)
+        private static void RegisterDefaults(IServiceCollection services, AbstractApplicationContext applicationContext)
         {
             applicationContext.ObjectFactory.RegisterSingleton("ServiceProvider", new SpringServiceProvider(applicationContext, services));
             applicationContext.ObjectFactory.RegisterSingleton("SpringServiceScopeFactory", new SpringServiceScopeFactory(applicationContext));
@@ -66,8 +87,6 @@ namespace Oragon.Spring.Extensions.DependencyInjection
             if (objectType.IsGenericTypeDefinition)
             {
                 returnValue += $"<{ string.Join(", ", objectType.GetGenericArguments().Select(BuildName).ToArray())}>";
-                //var x3 = $"                                         <{ string.Join(", ", objectType.GetGenericTypeDefinition().GetGenericArguments().Select(BuildName).ToArray())}>";
-                //var x4 = $"                                         <{ string.Join(", ", objectType.GetGenericTypeDefinition().GetGenericParameterConstraints().Select(BuildName).ToArray())}>";
                 ///Console.WriteLine("");
             }
             if (objectType.IsGenericParameter)

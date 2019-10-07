@@ -19,6 +19,7 @@
 #endregion
 
 using Oragon.Spring.Core.IO;
+using System.Collections.Generic;
 
 namespace Oragon.Spring.Context.Support
 {
@@ -47,7 +48,7 @@ namespace Oragon.Spring.Context.Support
         /// <param name="parentContext">The parent context.</param>
         /// <param name="configurationLocations">The configuration locations.</param>
         /// <param name="configurationResources">The configuration resources.</param>
-        public XmlApplicationContextArgs(string name, IApplicationContext parentContext, string[] configurationLocations, IResource[] configurationResources)
+        public XmlApplicationContextArgs(string name, IApplicationContext parentContext, IEnumerable<string> configurationLocations, IResource[] configurationResources)
             : this(name, parentContext, configurationLocations, configurationResources, DEFAULT_CASESENSITIVE, DEFAULT_REFRESH)
         { }
 
@@ -60,7 +61,7 @@ namespace Oragon.Spring.Context.Support
         /// <param name="configurationResources">The configuration resources.</param>
         /// <param name="caseSensitive">if set to <c>true</c> [case sensitive].</param>
         /// <param name="refresh">if set to <c>true</c> [refresh].</param>
-        public XmlApplicationContextArgs(string name, IApplicationContext parentContext, string[] configurationLocations, IResource[] configurationResources, bool caseSensitive, bool refresh)
+        public XmlApplicationContextArgs(string name, IApplicationContext parentContext, IEnumerable<string> configurationLocations, IResource[] configurationResources, bool caseSensitive, bool refresh)
         {
             Name = name;
             ParentContext = parentContext;

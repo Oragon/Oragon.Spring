@@ -10,13 +10,15 @@ namespace Oragon.Spring.Core.AspNetCoreTest.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get([FromServices] DummyService dummyService1, [FromServices] IDummyService dummyService2)
+        public ActionResult<IEnumerable<string>> Get([FromServices] DummyService dummyService1, [FromServices] IDummyService dummyService2, [FromServices] Microsoft.Extensions.Configuration.IConfiguration options )
         {
             return new string[] {
                 "value1",
                 "value2",
                 dummyService1.Ping(),
-                dummyService2.Ping()
+                dummyService2.Ping(),
+                dummyService1.GetConfiguration("ORAGON_SPRING_ENVIRONMENT_VAR"),
+                dummyService2.GetConfiguration("ORAGON_SPRING_ENVIRONMENT_VAR")
             };
         }
 

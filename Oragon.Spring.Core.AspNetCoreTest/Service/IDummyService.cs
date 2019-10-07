@@ -3,5 +3,7 @@
     public interface IDummyService
     {
         string Ping();
+
+        string GetConfiguration(string key);
     }
 }

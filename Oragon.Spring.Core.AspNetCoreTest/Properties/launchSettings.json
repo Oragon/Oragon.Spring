@@ -14,6 +14,7 @@
       "launchBrowser": true,
       "launchUrl": "api/values",
       "environmentVariables": {
+        "ORAGON_SPRING_ENVIRONMENT_VAR": "test Environment Variable - Oragon Spring Bridge",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
@@ -22,6 +23,7 @@
       "launchBrowser": true,
       "launchUrl": "api/values",
       "environmentVariables": {
+        "ORAGON_SPRING_ENVIRONMENT_VAR": "test Environment Variable - Oragon Spring Bridge",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "http://localhost:5000"
@@ -29,7 +31,15 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://localhost:{ServicePort}/api/values"
+      "launchUrl": "{Scheme}://localhost:{ServicePort}/api/values",
+      "environmentVariables": {
+        "ORAGON_SPRING_ENVIRONMENT_VAR": "test Environment Variable - Oragon Spring Bridge",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Azure Dev Spaces": {
+      "commandName": "AzureDevSpaces",
+      "launchBrowser": true
     }
   }
 }

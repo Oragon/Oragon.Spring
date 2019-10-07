@@ -12,16 +12,16 @@ namespace Oragon.Spring.Extensions.DependencyInjection
     {
 
         /// <summary>
-        /// Integrate with Spring.NET creating SpringServiceProvider as a .NET Core Service Provider
+        /// Setup Oragon Spring as Fallback ServiceProvider as a ASP.NET Core Service Provider
         /// </summary>
         /// <param name="services"></param>
         /// <param name="configurationLocations"></param>
         /// <returns>Returns a new SpringServiceProvider</returns>
-        public static IHostBuilder ConfigureOragonSpringAsDependencyInjectionContainer(this IHostBuilder hostBuilder, params string[] configurationLocations)
+        public static IHostBuilder ConfigureOragonSpring(this IHostBuilder hostBuilder, Action<OptionsBuilder> configFunc = null)
             =>
-            hostBuilder.UseServiceProviderFactory(new SpringServiceProviderFactory(configurationLocations));
+            hostBuilder.UseServiceProviderFactory(new SpringServiceProviderFactory(configFunc));
 
-        
+
 
 
     }

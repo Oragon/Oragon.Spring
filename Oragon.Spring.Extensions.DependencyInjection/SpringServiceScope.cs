@@ -8,9 +8,9 @@ namespace Oragon.Spring.Extensions.DependencyInjection
 {
     public class SpringServiceScope : IServiceScope
     {
-        private XmlApplicationContext applicationContext;
+        private AbstractApplicationContext applicationContext;
 
-        public SpringServiceScope(XmlApplicationContext applicationContext)
+        public SpringServiceScope(AbstractApplicationContext applicationContext)
         {
             this.applicationContext = applicationContext;
         }
