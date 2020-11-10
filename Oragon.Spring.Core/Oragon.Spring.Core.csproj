@@ -59,7 +59,7 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
         <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.0.0" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="3.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.0.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="3.0.0" />
        
